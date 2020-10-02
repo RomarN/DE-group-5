@@ -10,7 +10,7 @@ app.config["DEBUG"] = True
 @app.route('/prediction/<model>', methods=['POST'])
 def tawab_prediction(model):
     if model != "tawab":
-        return json.dumps({'message': 'test result'})
+        return json.dumps({'message': 'test result'}, sort_keys=False, indent=4), 200
 
 # def predict_perf(model):
 #     content = request.get_json()
