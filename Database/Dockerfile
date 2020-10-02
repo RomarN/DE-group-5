@@ -13,7 +13,7 @@ EXPOSE 5000
 #Add some meta data if necessary
 LABEL training.db.api="0.0.1-beta"
 # Run our App
-CMD ["python3","app.py"]
+CMD ["python3","Training_DataBase.py"]
 
 # We can also use an ENTRYPOINT and a CMD
 # Run our App
