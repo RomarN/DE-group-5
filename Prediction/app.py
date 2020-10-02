@@ -9,7 +9,7 @@ app.config["DEBUG"] = True
 
 @app.route('/prediction/<model>', methods=['POST'])
 
-    return json.dumps({'message': 'test result'})
+return json.dumps({'message': 'test result'})
 
 # def predict_perf(model):
 #     content = request.get_json()
