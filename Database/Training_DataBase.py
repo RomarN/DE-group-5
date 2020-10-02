@@ -1,5 +1,5 @@
 from flask import Flask, json, request, Response
-from Database.resources.Database_utilities import create_tb, drop_tb, add_data_records, read_data_records
+from resources.Database_utilities import create_tb, drop_tb, add_data_records, read_data_records
 
 app = Flask(__name__)
 
