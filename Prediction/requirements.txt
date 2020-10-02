@@ -5,8 +5,6 @@ nltk==3.5
 scipy==1.4.1
 pickle-mixin
 gensim
-keras==2.4.0
-tensorflow==2.2.0
 spacy==2.3.2
 treelib
 anytree
