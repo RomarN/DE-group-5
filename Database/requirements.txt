@@ -1,0 +1,4 @@
+flask
+pandas
+numpy
+sqlalchemy=1.3.18
