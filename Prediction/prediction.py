@@ -28,7 +28,8 @@ def forest_fire_prediction(model):
             # welke functies heeft model.sav?
             result = model.predict(df)
 
-            # Wat krijg ik terug?
+            # Use to_dict to convert pd df to a dict
+            # Maar wat krijg ik als result terug?            
             result_dict = result.to_dict(orient='records')
 
             # return prediction result
@@ -37,7 +38,7 @@ def forest_fire_prediction(model):
     elif model == "test":
         # Hardcoded test (source: PlotResults van ML assignment)
         result = [0.86611321, 0.43659247, 0.85455582, 1.95275274, 0.89050911]
-        result_dict = result.to_dict(orient='records')
+        result_dict = { i : result[i] for i in range(0, len(result) ) }
         return json.dumps(result_dict, sort_keys=False, indent=4)
 
     else:
