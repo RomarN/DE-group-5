@@ -21,6 +21,7 @@ def model_trainer(df):
     y = df.pop('area')
     X = df
     model = SVR()
+    model.fit(X,y)
     score = model.score(X, y)
 
     # Saving model in a given location (provided as an env. variable
