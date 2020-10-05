@@ -16,11 +16,6 @@ def preprocess_table(table_name):
     j = r.json()
     df = pd.DataFrame.from_dict(j)
     preprocess(df, table_name)
-    # df = df.drop(columns=['id']) Hoeft denk ik niet
-    # resp = Response(df.to_json(orient='records'), status=200, mimetype='application/json')
-    # resp.headers['Access-Control-Allow-Origin'] = '*'
-    # resp.headers['Access-Control-Allow-Methods'] = 'POST'
-    # resp.headers['Access-Control-Max-Age'] = '1000'
     return json.dumps({'message': 'pre-processing complete, table has been created'}, sort_keys=False, indent=4), 200
 
 @app.route('/training-dbpp/<table_name>', methods=['GET'])
