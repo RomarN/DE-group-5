@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 from flask import Flask, json, Response
 
-from resources.Preprocessing_utilities import preprocess, read_data_records
+from Resources.util import preprocess, read_data_records
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
