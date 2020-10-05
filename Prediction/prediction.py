@@ -25,14 +25,13 @@ def forest_fire_prediction(model):
             file_path = os.path.join(model_repo, "model.sav")
             model = load_model(file_path)
 
-            # welke functies heeft model.sav?
+            # Model returns list of predictions
             result = model.predict(df)
 
-            # Use to_dict to convert pd df to a dict
-            # Maar wat krijg ik als result terug?            
-            result_dict = result.to_dict(orient='records')
+            # Transform list into dict          
+            result_dict = { i : result[i] for i in range(0, len(result) ) }
 
-            # return prediction result
+            # Return prediction result as JSON
             return json.dumps(result_dict, sort_keys=False, indent=4)
 
     elif model == "test":

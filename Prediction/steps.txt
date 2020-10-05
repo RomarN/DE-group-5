@@ -6,5 +6,7 @@ Then.. "sudo docker build ." from the directory where the Docker file is located
 2. Create docker images:
 sudo docker build -t tawab/predictionapi:0.0.1 . (don't forget the . at the end)
 
+# Moet je voor elke wijziging nieuwe docker image builden?
+
 3. Running docker container:
 sudo docker run -p 5000:5000 tawab/predictionapi:0.0.1
