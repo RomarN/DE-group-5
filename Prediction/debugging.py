@@ -2,8 +2,7 @@ import json
 import pandas as pd
 from flask import Flask, json, request, Response
 import os
-
-from keras.models import load_model
+import pickle
 
 #from resources import predictor
 
@@ -18,22 +17,21 @@ def forest_fire_prediction(model):
         content = request.get_json()
         df = pd.read_json(json.dumps(content), orient='records') 
 
-        model_repo = os.environ['MODEL_REPO']
-        
-        file_path = os.path.join(model_repo, "model.sav")
+        # os.environ['MODEL_REPO']
+
         #file_path = 'model.sav'
-
-        print('testttt')
         
-        model = load_model(file_path)
+        with open("model.sav", "rb") as f:
+            model = pickle.load(f)
 
-        # Model returns list of predictions
-        result = model.predict(df)
+            # Model returns list of predictions
+            result = model.predict(df)
 
-        # Transform list into dict          
-        result_dict = { i : result[i] for i in range(0, len(result) ) }
+            # Transform list into dict          
+            result_dict = { i : result[i] for i in range(0, len(result) ) }
 
-        # Return prediction result as JSON
+            
+        # Return prediction result as JSON   
         return json.dumps(result_dict, sort_keys=False, indent=4)
 
     else:
