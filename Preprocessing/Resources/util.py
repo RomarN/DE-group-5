@@ -38,6 +38,7 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     # records = df.to_json(orient='records')
+    # records = records.get_json()
     records = df.to_dict(orient='records')
     print("komt ie hier")
     v_table = Base.metadata.tables[table_name]
