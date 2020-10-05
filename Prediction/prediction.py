@@ -44,4 +44,4 @@ def forest_fire_prediction(model):
         return json.dumps({'message': 'No model found.'}, sort_keys=False, indent=4)
 
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5003)

@@ -1,6 +1,6 @@
 1. Uploading to VM:
 After writing Dockerfile go to Google VM.
-Uupload the complete application to the Google VM with github (git clone)
+Upload the complete application to the Google VM with github (git clone)
 Then.. "sudo docker build ." from the directory where the Docker file is located.
 
 2. Create docker images:
