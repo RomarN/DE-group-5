@@ -38,13 +38,14 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     records = df.to_json(orient='records')
-    print(records[1])
+    print("komt ie hier")
     v_table = Base.metadata.tables[table_name]
     query = db.insert(v_table)
     connection = engine.connect()
     trans = connection.begin()
-    connection.execute(query, records[1])
+    connection.execute(query, {"X":8,"Y":6,"FFMC":91.2,"DMC":147.8,"DC":377.2,"ISI":12.7,"temp":19.6,"RH":43,"wind":4.9,"rain":0.0,"area":0.0,"fri":0,"mon":0,"sat":0,"thu":0,"tue":0,"wed":1,"apr":0,"aug":0,"feb":0,"jan":0,"jul":0,"jun":1,"mar":0,"may":0,"nov":0,"oct":0,"sep":0})
     trans.commit()
+    print("komt ie hier 2")
 
 
 def read_data_records(table_name):
