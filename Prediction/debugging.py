@@ -18,22 +18,27 @@ def forest_fire_prediction(model):
         content = request.get_json()
         df = pd.read_json(json.dumps(content), orient='records') 
 
-        #file_path = os.path.join(model_repo, "/model.sav")
-        file_path = 'model.sav'
+        file_path = os.path.join(model_repo, "model.sav")
+        #file_path = 'model.sav'
+
+        print('testttt')
+        print(file_path)
         
-        model = load_model(file_path)
+        # model = load_model(file_path)
 
-        # Model returns list of predictions
-        result = model.predict(df)
+        # # Model returns list of predictions
+        # result = model.predict(df)
 
-        # Transform list into dict          
-        result_dict = { i : result[i] for i in range(0, len(result) ) }
+        # # Transform list into dict          
+        # result_dict = { i : result[i] for i in range(0, len(result) ) }
 
         # Return prediction result as JSON
-        return json.dumps(result_dict, sort_keys=False, indent=4)
+        #return json.dumps(result_dict, sort_keys=False, indent=4)
+
+        return json.dumps({'message': 'SVM - DEBUGGING.PY'}, sort_keys=False, indent=4)
 
     else:
-        return json.dumps({'message': 'No model found.'}, sort_keys=False, indent=4)
+        return json.dumps({'message': 'No model found - DEBUGGING.PY'}, sort_keys=False, indent=4)
 
 
 app.run(host='0.0.0.0', port=5003)
