@@ -37,7 +37,7 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     records = df.to_json(orient='records')
-    print(df.head())
+    print(records)
     v_table = Base.metadata.tables[table_name]
     query = db.insert(v_table)
     connection = engine.connect()
