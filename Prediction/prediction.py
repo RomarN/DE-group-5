@@ -3,6 +3,8 @@ import pandas as pd
 from flask import Flask, json, request, Response
 import os
 
+from keras.models import load_model
+
 #from resources import predictor
 
 app = Flask(__name__)
@@ -19,10 +21,15 @@ def forest_fire_prediction(model):
         # E.g. records is like this: [{column -> value}, ... , {column -> value}]
               
         # Check if model repo exists on server
-        model_repo = os.environ['MODEL_REPO']
+
+        #model_repo = os.environ['MODEL_REPO']
+        model_repo = 'exists'
 
         if model_repo:
-            file_path = os.path.join(model_repo, "model.sav")
+
+            #file_path = os.path.join(model_repo, "/model.sav")
+            file_path = 'model.sav'
+            
             model = load_model(file_path)
 
             # Model returns list of predictions
