@@ -38,12 +38,12 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     records = df.to_json(orient='records')
-    print(records[0])
+    print(records[1])
     v_table = Base.metadata.tables[table_name]
     query = db.insert(v_table)
     connection = engine.connect()
     trans = connection.begin()
-    connection.execute(query, records[0])
+    connection.execute(query, records[1])
     trans.commit()
 
 
