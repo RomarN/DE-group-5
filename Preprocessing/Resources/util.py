@@ -20,7 +20,7 @@ def preprocess(df, table_name):
     area = np.log(area + 1)
     df_bin['area'] = area
 
-    column_names = list(df_bin.columns)
+    column_names = df_bin.columns
     create_table(column_names, table_name)
     add_data_records(table_name, df_bin)
 
