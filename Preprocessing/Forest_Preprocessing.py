@@ -32,3 +32,5 @@ def read_data(table_name):
     resp.headers['Access-Control-Allow-Methods'] = 'POST'
     resp.headers['Access-Control-Max-Age'] = '1000'
     return resp
+
+app.run(host='0.0.0.0', port=5000)
