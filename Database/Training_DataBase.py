@@ -1,5 +1,5 @@
 from flask import Flask, json, request, Response
-from resources.Database_utilities import create_tb, drop_tb, add_data_records, read_data_records
+from Resources.Database_utilities import create_tb, drop_tb, add_data_records, read_data_records
 
 app = Flask(__name__)
 
@@ -36,4 +36,4 @@ def read_data(table_name):
     return resp
 
 
-app.run( port=5000)
+app.run(host='0.0.0.0', port=5000)

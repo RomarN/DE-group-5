@@ -11,10 +11,9 @@ COPY . .
 # Expose the port that our app runs in
 EXPOSE 5000
 # Enviroment Variables
-ENV MODEL_REPO  /usr/src/myapp/models
-ENV TRAIN_DB_API  http://training-dbpp:5000/training-dbpp/fires
+ENV TRAIN_DB_API  http://training-db:5000/training-db/fires
 # Run our App
-CMD ["python3","Forest_Trainer.py"]
+CMD ["python3","Forest_Preprocessing.py"]
 
 # We can also use an ENTRYPOINT and a CMD
 # Run our App
