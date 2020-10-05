@@ -21,6 +21,7 @@ def preprocess(df, table_name):
     df_bin['area'] = area
 
     column_names = df_bin.columns
+    print(column_names)
     create_table(column_names, table_name)
     add_data_records(table_name, df_bin)
 
@@ -37,12 +38,12 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     records = df.to_json(orient='records')
-    print(records)
+    print(records[0])
     v_table = Base.metadata.tables[table_name]
     query = db.insert(v_table)
     connection = engine.connect()
     trans = connection.begin()
-    connection.execute(query, records)
+    connection.execute(query, records[0])
     trans.commit()
 
 
