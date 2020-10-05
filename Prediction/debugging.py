@@ -18,8 +18,8 @@ def forest_fire_prediction(model):
         content = request.get_json()
         df = pd.read_json(json.dumps(content), orient='records') 
 
-        #file_path = os.path.join(model_repo, "model.sav")
-        file_path = 'model.sav'
+        file_path = os.path.join(model_repo, "model.sav")
+        #file_path = 'model.sav'
 
         print('testttt')
         
