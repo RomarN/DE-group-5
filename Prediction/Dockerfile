@@ -13,7 +13,7 @@ EXPOSE 5003
 # Enviroment Variables
 ENV MODEL_REPO  /usr/src/myapp/models
 # Run our App
-CMD ["python3","prediction.py"]
+CMD ["python3","debugging.py"]
 
 # We can also use an ENTRYPOINT and a CMD
 # Run our App
