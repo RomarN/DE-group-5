@@ -15,7 +15,7 @@ def preprocess_table(table_name):
     r = requests.get(db_api)
     j = r.json()
     df = pd.DataFrame.from_dict(j)
-    df = preprocess(df, table_name)
+    preprocess(df, table_name)
     # df = df.drop(columns=['id']) Hoeft denk ik niet
     # resp = Response(df.to_json(orient='records'), status=200, mimetype='application/json')
     # resp.headers['Access-Control-Allow-Origin'] = '*'

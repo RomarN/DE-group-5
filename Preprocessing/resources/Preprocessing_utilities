@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 import sqlalchemy as db
-from sqlalchemy import Column, Float, Table, Integer, String
+from sqlalchemy import Column, Float, Table, Integer
 from sqlalchemy.ext.declarative import declarative_base
 
 engine = db.create_engine('sqlite:///traindbpreprocessed.db', echo=True)
