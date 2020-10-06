@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: training-cp
+  name: training-cp
+  namespace: ForestFires
+spec:
+  replicas: 2 # Creating two PODs for our app
+  selector:
+    matchLabels:
+      app: training-cp
+  template:
+    metadata:
+      labels:
+        app: training-cp
+    spec:
+      containers:
+      - image: gcr.io/weighty-flag-288919/trainapi:0.0.1 # Docker image name, that we pushed to GCR
+        name: training-cp-api     # POD name
+        volumeMounts:
+        - mountPath: /usr/src/models
+          name: model-repo
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        env:
+        - name: MODEL_REPO
+          value: /usr/src/models
+        - name: PREPROCES_DB_API
+          value: http://preproces-db-service:5000/training-dbpp/fires
+      volumes:
+      - name: model-repo
+        persistentVolumeClaim:
+          claimName: nfs-model-repo
