@@ -11,31 +11,28 @@ app = Flask(__name__, static_folder="templates")
 app.config["DEBUG"] = True
 
 
-# @app.route("/")
-# def visualize():
-#     # https://matplotlib.org/3.3.2/faq/howto_faq.html#how-to-use-matplotlib-in-a-web-application-server
-#     # Load necessary data
-#     preproccesed_data = os.environ["TRAIN_DB_API"]
-#     r = requests.get(preproccesed_data)
-#     j = r.json()
-#     df_preproccesed_data = pd.DataFrame.from_dict(j)
-#
-#     predicted_data = os.environ["PREDI§CT_DB_API"]
-#
-#     # Convert to important data
-#     original_values = None
-#     predicted_values = None
-#
-#     # Plot model
-#     plot_model(original_values, predicted_values)
-
-
 @app.route('/')
 def index():
+    # # Load necessary data
+    # preproccesed_data = os.environ["TRAIN_DB_API"]
+    # r = requests.get(preproccesed_data)
+    # j = r.json()
+    # df_preproccesed_data = pd.DataFrame.from_dict(j)
+    #
+    # predicted_data = os.environ["PREDI§CT_DB_API"]
+    #
+    # # Convert to important data
+    # original_values = None
+    # predicted_values = None
+
     # Generate the figure **without using pyplot**.
     fig = Figure()
     ax = fig.subplots()
     ax.plot([1, 2])
+
+    # ax.plot(original_values)
+    # ax.plot(predicted_values)
+
     # Save it to a temporary buffer.
     buf = BytesIO()
     fig.savefig(buf, format="png")
