@@ -3,10 +3,10 @@
     sudo docker run -p 5000:5000 -d --name=dbAPI romarjamal/train-db-api-test:0.0.1
 
 // preprocess:
-    sudo docker run -p 5001:5000 -e TRAIN_DB_API='http://dbAPI:5000/training-db/fires' -d --name=preprocesAPI romarjamal/preproces-api-test:0.0.1
+    sudo docker run -p 5001:5000 -e TRAIN_DB_API='http://dbAPI:5000/training-db/fires' -d --name=preprocessAPI romarjamal/preproces-api-test:0.0.1
 
 // train:
-    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e PREPROCESS_DB_API='http://preprocesAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train-api-test:0.0.1
+    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e PREPROCESS_DB_API='http://preprocessAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train-api-test:0.0.1
 
 
 // predict:
@@ -16,6 +16,6 @@ sudo docker run -p 5003:5000 -v /home/romarjamal/models:/usr/src/myapp/models -d
 // netwerk:
     sudo docker network create test
     sudo docker network connect test dbAPI
-    sudo docker network connect test preprocesAPI
+    sudo docker network connect test preprocessAPI
     sudo docker network connect test trainAPI 
     sudo docker network connect test predictionAPI
