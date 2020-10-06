@@ -3,7 +3,7 @@ from io import BytesIO
 from matplotlib.figure import Figure
 
 # Make plot
-def visualize(original_values, predicted_values):
+def plot_model(original_values, predicted_values):
     # Generate the figure **without using pyplot**.
     fig = Figure()
     ax = fig.subplots()

@@ -1,9 +1,8 @@
 import pandas as pd
 from flask import Flask, json, request, Response
 import requests
-import base64
-from io import BytesIO
-from matplotlib.figure import Figure
+import os
+from resources import visualize
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -20,6 +19,11 @@ def visualize():
     predicted_data = os.environ["PREDICT_DB_API"]
 
     # Convert to important data
+    original_values = None
+    predicted_values = None
+
+    # Plot model
+    plot_model(original_values, predicted_values)
 
 
 
