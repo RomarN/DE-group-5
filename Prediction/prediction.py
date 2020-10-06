@@ -8,9 +8,11 @@ from  sklearn.svm import SVR
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
+RESULT = {}
 
 @app.route('/prediction/<model>', methods=['POST'])
 def forest_fire_prediction(model):
+    global RESULT
 
     if model == "SVM":
         content = request.get_json()
@@ -29,6 +31,7 @@ def forest_fire_prediction(model):
             result = model.predict(df)
             # Transform list into dict          
             result_dict = { i : result[i] for i in range(0, len(result) ) }
+            RESULT = result_dict
             # Return prediction result as JSON
             return json.dumps(result_dict, sort_keys=False, indent=4)
 
@@ -40,6 +43,12 @@ def forest_fire_prediction(model):
 
     else:
         return json.dumps({'message': 'No model found.'}, sort_keys=False, indent=4)
+
+
+@app.route('/prediction/db', methods=['GET'])
+def send_data():
+    global RESULT
+    return json.dumps(RESULT, sort_keys=False, indent=4)
 
 
 app.run(host='0.0.0.0', port=5000)
