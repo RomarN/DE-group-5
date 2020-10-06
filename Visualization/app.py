@@ -10,14 +10,13 @@ app = Flask(__name__, static_folder="templates")
 app.config["DEBUG"] = True
 
 
-@app.route('/')
+@app.route('/visualize')
 def index():
     # Load necessary data
     preproccesed_data = os.environ["TRAIN_DB_API"]
     r = requests.get(preproccesed_data)
     j = r.json()
     df_preproccesed_data = pd.DataFrame.from_dict(j)
-
 
     # Convert to important data
     original_values = df_preproccesed_data.pop("area")

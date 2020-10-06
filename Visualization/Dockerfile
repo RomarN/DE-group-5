@@ -11,8 +11,7 @@ COPY . .
 # Expose the port that our app runs in
 EXPOSE 5000
 # Enviroment Variables
-ENV MODEL_REPO  /usr/src/myapp/models
-ENV TRAIN_DB_API  http://training-dbpp:5000/training-dbpp/fires
+ENV PREPROCESS_DB_API  http://training-dbpp:5000/training-dbpp/fires
 ENV PREDICT_DB_API pass
 # Run our App
 CMD ["python3","app.py"]
