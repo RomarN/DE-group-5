@@ -1,0 +1,4 @@
+flask
+pandas==1.0.5
+requests
+matplotlib==3.3.0
