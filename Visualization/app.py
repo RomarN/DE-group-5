@@ -24,7 +24,7 @@ def index():
     r = requests.get(db_api)
     j = r.json()
     print(j)
-    print(j[1])
+    print(j['1'])
     predicted_areas = pd.DataFrame.from_dict(j)
 
     # Generate the figure **without using pyplot**.
