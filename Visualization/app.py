@@ -2,6 +2,7 @@ import pandas as pd
 from flask import Flask, json, request, Response, render_template
 import requests
 import os
+import json
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
@@ -12,20 +13,20 @@ app.config["DEBUG"] = True
 
 @app.route('/visualize')
 def index():
+    print(os.getcwd())
     # Load necessary data
-    preproccesed_data = os.environ["PREPROCESS_DB_API"]
-    r = requests.get(preproccesed_data)
-    j = r.json()
-    df_preproccesed_data = pd.DataFrame.from_dict(j)
+    with open('Visualization/predict_area') as json_file:
+        areas = json.load(json_file)
+
+    original_area = [area['area'] for area in areas]
 
     # Convert to important data
-    original_values = df_preproccesed_data.pop("area")
     predicted_values = None
 
     # Generate the figure **without using pyplot**.
     fig = Figure()
     plt = fig.subplots()
-    plt.plot(original_values, label="True values")
+    plt.plot(original_area, label="Original values")
     # plt.plot([1.2, 1.9], label="True values")
     plt.plot([1, 2], label="Prediction")
 
@@ -42,4 +43,4 @@ def index():
     return render_template('index.html', data=data)
 
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='127.0.0.1', port=5000)
