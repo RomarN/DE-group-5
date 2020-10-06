@@ -13,20 +13,20 @@ app.config["DEBUG"] = True
 @app.route('/visualize')
 def index():
     # Load necessary data
-    # preproccesed_data = os.environ["PREPROCESS_DB_API"]
-    # r = requests.get(preproccesed_data)
-    # j = r.json()
-    # df_preproccesed_data = pd.DataFrame.from_dict(j)
+    preproccesed_data = os.environ["PREPROCESS_DB_API"]
+    r = requests.get(preproccesed_data)
+    j = r.json()
+    df_preproccesed_data = pd.DataFrame.from_dict(j)
 
     # Convert to important data
-    # original_values = df_preproccesed_data.pop("area")
+    original_values = df_preproccesed_data.pop("area")
     predicted_values = None
 
     # Generate the figure **without using pyplot**.
     fig = Figure()
     plt = fig.subplots()
-    # plt.plot(original_values, label="True values")
-    plt.plot([1.2, 1.9], label="True values")
+    plt.plot(original_values, label="True values")
+    # plt.plot([1.2, 1.9], label="True values")
     plt.plot([1, 2], label="Prediction")
 
     plt.set_title("Model predictions vs True values")
