@@ -2,7 +2,6 @@ import pandas as pd
 from flask import Flask, json, request, Response, render_template
 import requests
 import os
-# from resources import visualize
 import base64
 from io import BytesIO
 from matplotlib.figure import Figure
@@ -13,30 +12,26 @@ app.config["DEBUG"] = True
 
 @app.route('/')
 def index():
-    # # Load necessary data
-    # preproccesed_data = os.environ["TRAIN_DB_API"]
-    # r = requests.get(preproccesed_data)
-    # j = r.json()
-    # df_preproccesed_data = pd.DataFrame.from_dict(j)
-    #
-    # predicted_data = os.environ["PREDI§CT_DB_API"]
-    #
-    # # Convert to important data
-    # original_values = None
-    # predicted_values = None
+    # Load necessary data
+    preproccesed_data = os.environ["TRAIN_DB_API"]
+    r = requests.get(preproccesed_data)
+    j = r.json()
+    df_preproccesed_data = pd.DataFrame.from_dict(j)
+
+
+    # Convert to important data
+    original_values = df_preproccesed_data.pop("area")
+    predicted_values = None
 
     # Generate the figure **without using pyplot**.
     fig = Figure()
     plt = fig.subplots()
-    plt.plot([1, 2], label = "Prediction")
-    plt.plot([1.2, 1.9], label = "True values")
+    plt.plot(original_values, label="True values")
+    plt.plot([1, 2], label="Prediction")
 
     plt.set_title("Model predictions vs True values")
     plt.set(xlabel = "Predictions", ylabel = "Area in $ha$")
     plt.legend()
-
-    # ax.plot(original_values)
-    # ax.plot(predicted_values)
 
     # Save it to a temporary buffer.
     buf = BytesIO()
