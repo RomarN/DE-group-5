@@ -4,7 +4,7 @@ metadata:
   name: preproces-dp-service
   labels:
     app: preproces-dp
-  namespace: ForestFires
+  namespace: forestfire
 spec:
   type: LoadBalancer
   ports:

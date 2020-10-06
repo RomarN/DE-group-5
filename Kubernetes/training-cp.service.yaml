@@ -4,7 +4,7 @@ metadata:
   name: training-cp-service
   labels:
     app: training-cp
-  namespace: ForestFires
+  namespace: forestfire
 spec:
   type: LoadBalancer
   ports:

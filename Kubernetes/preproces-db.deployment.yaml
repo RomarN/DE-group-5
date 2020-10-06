@@ -4,7 +4,7 @@ metadata:
   labels:
     app: preproces-db
   name: preproces-db
-  namespace: ForestFires
+  namespace: forestfire
 spec:
   replicas: 2 # Creating two PODs for our app
   selector:

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: nfs-pp-data
-  namespace: ForestFires
+  namespace: forestfire
 spec:
   accessModes:
   - ReadWriteMany

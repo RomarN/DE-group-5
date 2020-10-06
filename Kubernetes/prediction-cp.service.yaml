@@ -4,7 +4,7 @@ metadata:
   name: prediction-cp-service
   labels:
     app: prediction-cp
-  namespace: ForestFires
+  namespace: forestfire
 spec:
   type: LoadBalancer
   ports:
