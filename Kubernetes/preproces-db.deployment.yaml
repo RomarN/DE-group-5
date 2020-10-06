@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: preproces-db
+  name: preproces-db
+  namespace: ForestFires
+spec:
+  replicas: 2 # Creating two PODs for our app
+  selector:
+    matchLabels:
+      app: preproces-db
+  template:
+    metadata:
+      labels:
+        app: preproces-db
+    spec:
+      containers:
+      - image: gcr.io/weighty-flag-288919/preprocesdbapi:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
+        name: preproces-db-api     # POD name
+        volumeMounts:
+        - mountPath: /usr/src/tdb
+          name: preproces-db-vol
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        env:
+        - name: PP_LOC
+          value: /usr/src/pptdb/
+        - name: TRAIN_DB_API
+          value: http://training-db-service:5000/training-db/fires
+      volumes:
+      - name: preproces-db-vol
+        persistentVolumeClaim:
+          claimName: nfs-pp-data
