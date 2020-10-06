@@ -9,11 +9,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy all files in training-db local host directory to /usr/src/myapp in Docker container
 COPY . .
 # Expose the port that our app runs in
-EXPOSE 5003
+EXPOSE 5000
 # Enviroment Variables
 ENV MODEL_REPO  /usr/src/myapp/models
 # Run our App
-CMD ["python3","debugging.py"]
+CMD ["python3","prediction.py"]
 
 # We can also use an ENTRYPOINT and a CMD
 # Run our App

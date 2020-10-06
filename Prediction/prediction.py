@@ -2,8 +2,10 @@ import json
 import pandas as pd
 from flask import Flask, json, request, Response
 import os
+import pickle
+from  sklearn.svm import SVR
 
-from keras.models import load_model
+# from keras.models import load_model
 
 #from resources import predictor
 
@@ -22,15 +24,16 @@ def forest_fire_prediction(model):
               
         # Check if model repo exists on server
 
-        #model_repo = os.environ['MODEL_REPO']
-        model_repo = 'exists'
+        model_repo = os.environ['MODEL_REPO']
+        # model_repo = 'exists'
 
         if model_repo:
 
-            #file_path = os.path.join(model_repo, "/model.sav")
-            file_path = 'model.sav'
+            file_path = os.path.join(model_repo, "model.sav")
+            # file_path = 'model.sav'
             
-            model = load_model(file_path)
+            # model = load_model(file_path)
+            model = pickle.load(open(file_path, 'rb'))
 
             # Model returns list of predictions
             result = model.predict(df)
@@ -51,4 +54,4 @@ def forest_fire_prediction(model):
         return json.dumps({'message': 'No model found.'}, sort_keys=False, indent=4)
 
 
-app.run(host='0.0.0.0', port=5003)
+app.run(host='0.0.0.0', port=5000)

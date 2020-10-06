@@ -10,3 +10,7 @@ sudo docker build -t tawab/predictionapi:0.0.1 . (don't forget the . at the end)
 
 3. Running docker container:
 sudo docker run -p 5000:5000 tawab/predictionapi:0.0.1
+
+
+
+sudo docker run -p 5003:5000 -v /home/romarjamal/models:/usr/src/myapp/models -d --name=predictionAPI romarjamal/prediction-api-test:0.0.1

@@ -20,7 +20,7 @@ def forest_fire_prediction(model):
         model_repo = os.environ['MODEL_REPO']
         file_path = os.path.join(model_repo, "model.sav")
         
-        with open(file_path, "rb") as f:
+        with open(file_path, 'rb') as f:
             model = pickle.load(f)
 
             # Model returns list of predictions
