@@ -12,10 +12,9 @@ COPY . .
 EXPOSE 5000
 # Enviroment Variables
 ENV MODEL_REPO  /usr/src/myapp/models
-ENV TRAIN_DB_API  http://training-dbpp:5000/training-dbpp/fires
-ENV PREDICT_DB_API pass
+ENV TRAIN_DB_API  http://training-db:5000/training-db/fires
 # Run our App
-CMD ["python3","app.py"]
+CMD ["python3","Forest_Trainer.py"]
 
 # We can also use an ENTRYPOINT and a CMD
 # Run our App
