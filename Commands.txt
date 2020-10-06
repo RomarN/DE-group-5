@@ -6,7 +6,7 @@
     sudo docker run -p 5001:5000 -e TRAIN_DB_API='http://dbAPI:5000/training-db/fires' -d --name=preprocesAPI romarjamal/preproces-api-test:0.0.1
 
 // train:
-    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e TRAIN_DB_API='http://preprocesAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train-api-test:0.0.1
+    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e PREPROCES_DB_API='http://preprocesAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train-api-test:0.0.1
 
 
 // predict:
