@@ -15,7 +15,7 @@ app.config["DEBUG"] = True
 def index():
     print(os.getcwd())
     # Load necessary data
-    with open('Visualization/predict_area') as json_file:
+    with open('predict_area') as json_file:
         areas = json.load(json_file)
 
     original_area = [area['area'] for area in areas]
