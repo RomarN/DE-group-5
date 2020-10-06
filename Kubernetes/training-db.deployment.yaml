@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: training-db
+  name: training-db
+  namespace: ForestFires
+spec:
+  replicas: 2 # Creating two PODs for our app
+  selector:
+    matchLabels:
+      app: training-db
+  template:
+    metadata:
+      labels:
+        app: training-db
+    spec:
+      containers:
+      - image: gcr.io/weighty-flag-288919/trainingdbapi:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
+        name: training-db-api     # POD name
+        volumeMounts:
+        - mountPath: /usr/src/tdb
+          name: training-db-vol
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        env:
+        - name: DB_LOC
+          value: /usr/src/tdb/
+      volumes:
+      - name: training-db-vol
+        persistentVolumeClaim:
+          claimName: nfs-data
