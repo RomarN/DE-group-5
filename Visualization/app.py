@@ -13,22 +13,24 @@ app.config["DEBUG"] = True
 
 @app.route('/visualize')
 def index():
-    print(os.getcwd())
+
     # Load necessary data
     with open('predict_area') as json_file:
         areas = json.load(json_file)
 
     original_area = [area['area'] for area in areas]
 
-    # Convert to important data
-    predicted_values = None
+    db_api = os.environ['PREDICT_DB_API']
+    r = requests.get(db_api)
+    j = r.json()
+    predicted_areas = pd.DataFrame.from_dict(j)
 
     # Generate the figure **without using pyplot**.
     fig = Figure()
     plt = fig.subplots()
     plt.plot(original_area, label="Original values")
     # plt.plot([1.2, 1.9], label="True values")
-    plt.plot([1, 2], label="Prediction")
+    plt.plot(predicted_areas, label="Prediction")
 
     plt.set_title("Model predictions vs True values")
     plt.set(xlabel = "Predictions", ylabel = "Area in $ha$")
