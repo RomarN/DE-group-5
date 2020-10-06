@@ -31,7 +31,7 @@ def index():
     plt.plot([1, 2], label = "Prediction")
     plt.plot([1.2, 1.9], label = "True values")
 
-    plt.set_title("Dion")
+    plt.set_title("Model predictions vs True values")
     plt.set(xlabel = "Predictions", ylabel = "Area in $ha$")
     plt.legend()
 
