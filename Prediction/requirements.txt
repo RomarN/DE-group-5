@@ -1,0 +1,5 @@
+flask
+pandas==1.0.5
+pickle-mixin
+requests
+scikit-learn==0.23.1
