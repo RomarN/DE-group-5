@@ -23,6 +23,8 @@ def index():
     db_api = os.environ['PREDICT_DB_API']
     r = requests.get(db_api)
     j = r.json()
+    print(j)
+    print(j[1])
     predicted_areas = pd.DataFrame.from_dict(j)
 
     # Generate the figure **without using pyplot**.
