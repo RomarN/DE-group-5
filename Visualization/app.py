@@ -27,8 +27,13 @@ def index():
 
     # Generate the figure **without using pyplot**.
     fig = Figure()
-    ax = fig.subplots()
-    ax.plot([1, 2])
+    plt = fig.subplots()
+    plt.plot([1, 2], label = "Prediction")
+    plt.plot([1.2, 1.9], label = "True values")
+
+    plt.set_title("Dion")
+    plt.set(xlabel = "Predictions", ylabel = "Area in $ha$")
+    plt.legend()
 
     # ax.plot(original_values)
     # ax.plot(predicted_values)
@@ -36,6 +41,7 @@ def index():
     # Save it to a temporary buffer.
     buf = BytesIO()
     fig.savefig(buf, format="png")
+
     # Embed the result in the html output.
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
     return render_template('index.html', data=data)
