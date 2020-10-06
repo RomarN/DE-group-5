@@ -17,4 +17,3 @@ def plot_model(original_values, predicted_values):
     # Embed the result in the html output.
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
     return f"<img src='data:image/png;base64,{data}'/>"
-

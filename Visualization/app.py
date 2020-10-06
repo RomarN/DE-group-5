@@ -1,11 +1,12 @@
 import pandas as pd
-from flask import Flask, json, request, Response
+from flask import Flask, json, request, Response, render_template
 import requests
 import os
 from resources import visualize
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
+
 
 @app.route("/")
 def visualize():
@@ -25,6 +26,10 @@ def visualize():
     # Plot model
     plot_model(original_values, predicted_values)
 
+
+@app.route('/')
+def index():
+    return render_template('index.html', name='TawaG')
 
 
 app.run(host='0.0.0.0', port=5000)
