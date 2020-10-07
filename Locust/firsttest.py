@@ -13,5 +13,5 @@ class WebsiteTestUser(HttpUser):
         pass
 
     @task(1)
-    def read_data(self):
-        self.client.get("http://34.123.182.85:5000/training-db/fires")
+    def hello_world(self):
+        self.client.get("http://127.0.0.1:5000")
