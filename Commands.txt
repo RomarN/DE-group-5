@@ -1,17 +1,19 @@
 // db:
 
-    sudo docker run -p 5000:5000 -d --name=dbAPI romarjamal/train-db-api-test:0.0.1
+    sudo docker run -p 5000:5000 -d --name=dbAPI romarjamal/db:0.0.1
 
 // preprocess:
-    sudo docker run -p 5001:5000 -e TRAIN_DB_API='http://dbAPI:5000/training-db/fires' -d --name=preprocessAPI romarjamal/preproces-api-test:0.0.1
+    sudo docker run -p 5001:5000 -e TRAIN_DB_API='http://dbAPI:5000/training-db/fires' -d --name=preprocessAPI romarjamal/preprocess:0.0.1
 
 // train:
-    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e PREPROCESS_DB_API='http://preprocessAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train-api-test:0.0.1
-
+    sudo docker run -p  5002:5000 -v /home/romarjamal/models:/usr/src/myapp/models -e PREPROCESS_DB_API='http://preprocessAPI:5000/training-dbpp/fires' -d --name=trainAPI romarjamal/train:0.0.1
 
 // predict:
 
-sudo docker run -p 5003:5000 -v /home/romarjamal/models:/usr/src/myapp/models -d --name=predictionAPI romarjamal/prediction-api-test:0.0.1
+sudo docker run -p 5003:5000 -v /home/romarjamal/models:/usr/src/myapp/models -d --name=predictionAPI romarjamal/predict:0.0.1
+
+// Visuzalize:
+sudo docker run -p 5004:5000 -e PREDICT_DB_API='http://predictionAPI:5000/prediction/db' -d --name=visAPI romarjamal/vis:0.0.1
 
 // netwerk:
     sudo docker network create test
@@ -19,3 +21,4 @@ sudo docker run -p 5003:5000 -v /home/romarjamal/models:/usr/src/myapp/models -d
     sudo docker network connect test preprocessAPI
     sudo docker network connect test trainAPI 
     sudo docker network connect test predictionAPI
+    sudo docker network connect test visAPI
