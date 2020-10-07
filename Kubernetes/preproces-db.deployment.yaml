@@ -16,7 +16,7 @@ spec:
         app: preproces-db
     spec:
       containers:
-      - image: gcr.io/weighty-flag-288919/preprocesdbapi:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
+      - image: gcr.io/weighty-flag-288919/preprocess:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
         name: preproces-db-api     # POD name
         volumeMounts:
         - mountPath: /usr/src/tdb
