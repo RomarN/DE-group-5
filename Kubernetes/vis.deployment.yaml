@@ -26,4 +26,4 @@ spec:
           protocol: TCP
         env:
         - name: PREDICT_DB_API
-          value: http://prediction:5003/prediction/db
+          value: http://prediction-cp-service:5003/prediction/db
