@@ -24,6 +24,7 @@ def index():
     r = requests.get(db_api)
     # j = r.json()
     print(r)
+    print('test')
     # print(j['1'])
     predicted_areas = pd.DataFrame.from_dict(r)
 
