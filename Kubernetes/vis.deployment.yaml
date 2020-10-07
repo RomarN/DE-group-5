@@ -18,9 +18,9 @@ spec:
       containers:
       - image: gcr.io/weighty-flag-288919/vis:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
         name: visualize     # POD name
-        volumeMounts:
-        - mountPath: /usr/src/vis
-          name: visualize-vol
+#        volumeMounts:
+#        - mountPath: /usr/src/vis
+#          name: visualize-vol
         ports:
         - containerPort: 5000
           protocol: TCP
