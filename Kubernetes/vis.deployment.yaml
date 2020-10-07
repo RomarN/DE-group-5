@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: visualize
+  name: visualize
+  namespace: forestfire
+spec:
+  replicas: 2 # Creating two PODs for our app
+  selector:
+    matchLabels:
+      app: visualize
+  template:
+    metadata:
+      labels:
+        app: visualize
+    spec:
+      containers:
+      - image: gcr.io/weighty-flag-288919/vis:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
+        name: visualize     # POD name
+        volumeMounts:
+        - mountPath: /usr/src/tdb
+          name: visualize-vol
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        env:
+        - name: PREDICT_DB_API
+          value: http://prediction:5000/prediction/db
