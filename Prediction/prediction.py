@@ -8,7 +8,7 @@ from  sklearn.svm import SVR
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
-RESULT = {}
+RESULT = []
 
 @app.route('/prediction/<model>', methods=['POST'])
 def forest_fire_prediction(model):
@@ -29,9 +29,10 @@ def forest_fire_prediction(model):
             model = pickle.load(open(file_path, 'rb'))
             # Model returns list of predictions
             result = model.predict(df)
+            RESULT = result
             # Transform list into dict          
             result_dict = { i : result[i] for i in range(0, len(result) ) }
-            RESULT = result_dict
+            RESULT = result
             # Return prediction result as JSON
             return json.dumps(result_dict, sort_keys=False, indent=4)
 
@@ -48,7 +49,12 @@ def forest_fire_prediction(model):
 @app.route('/prediction/db', methods=['GET'])
 def send_data():
     global RESULT
-    return json.dumps(RESULT, sort_keys=False, indent=4)
+    df_result = pd.DataFrame(RESULT, columns = ['area'])
+    resp = Response(df_result.to_json(orient='records'), status=200, mimetype='application/json')
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    resp.headers['Access-Control-Allow-Methods'] = 'POST'
+    resp.headers['Access-Control-Max-Age'] = '1000'
+    return resp
 
 
 app.run(host='0.0.0.0', port=5000)
