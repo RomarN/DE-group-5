@@ -27,8 +27,8 @@ spec:
         env:
         - name: MODEL_REPO
           value: /usr/src/models
-        - name: PREPROCES_DB_API
-          value: http://preprocess-db-service:5000/training-dbpp/fires
+        - name: PREPROCESS_DB_API
+          value: http://preprocess-db-service:5001/training-dbpp/fires
       volumes:
       - name: model-repo
         persistentVolumeClaim:

@@ -38,14 +38,12 @@ def create_table(column_names, table_name):
 
 def add_data_records(table_name, df):
     records = df.to_dict(orient='records')
-    print("komt ie hier")
     v_table = Base.metadata.tables[table_name]
     query = db.insert(v_table)
     connection = engine.connect()
     trans = connection.begin()
     connection.execute(query, records)
     trans.commit()
-    print("komt ie hier 2")
 
 
 def read_data_records(table_name):
