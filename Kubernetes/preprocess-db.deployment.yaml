@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: preproces-db
-  name: preproces-db
+    app: preprocess-db
+  name: preprocess-db
   namespace: forestfire
 spec:
   replicas: 2 # Creating two PODs for our app
   selector:
     matchLabels:
-      app: preproces-db
+      app: preprocess-db
   template:
     metadata:
       labels:
-        app: preproces-db
+        app: preprocess-db
     spec:
       containers:
       - image: gcr.io/weighty-flag-288919/preprocess:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
