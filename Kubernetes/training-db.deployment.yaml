@@ -16,7 +16,7 @@ spec:
         app: training-db
     spec:
       containers:
-      - image: gcr.io/ass1-291720/trainingdbapi #- gcr.io/weighty-flag-288919/trainingdbapi:0.0.1  Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
+      - image: gcr.io/weighty-flag-288919/db:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
         name: training-db-api     # POD name
         volumeMounts:
         - mountPath: /usr/src/tdb

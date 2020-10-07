@@ -16,7 +16,7 @@ spec:
         app: prediction-cp
     spec:
       containers:
-      - image: gcr.io/weighty-flag-288919/predictionapi:0.0.1 # Docker image name, that we pushed to GCR
+      - image: gcr.io/weighty-flag-288919/prediction:0.0.1 # Docker image name, that we pushed to GCR
         name: prediction-cp-api     # POD name
         volumeMounts:
         - mountPath: /usr/src/models

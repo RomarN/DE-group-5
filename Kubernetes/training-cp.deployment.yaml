@@ -16,7 +16,7 @@ spec:
         app: training-cp
     spec:
       containers:
-      - image: gcr.io/weighty-flag-288919/trainapi:0.0.1 # Docker image name, that we pushed to GCR
+      - image: gcr.io/weighty-flag-288919/train:0.0.1 # Docker image name, that we pushed to GCR
         name: training-cp-api     # POD name
         volumeMounts:
         - mountPath: /usr/src/models
