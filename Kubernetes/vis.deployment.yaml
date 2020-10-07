@@ -19,11 +19,11 @@ spec:
       - image: gcr.io/weighty-flag-288919/vis:0.0.1 # Docker image name, that we pushed to GCR NOTE:ROMARS DE PROJECT
         name: visualize     # POD name
         volumeMounts:
-        - mountPath: /usr/src/tdb
+        - mountPath: /usr/src/vis
           name: visualize-vol
         ports:
         - containerPort: 5000
           protocol: TCP
         env:
         - name: PREDICT_DB_API
-          value: http://prediction:5000/prediction/db
+          value: http://prediction:5003/prediction/db
