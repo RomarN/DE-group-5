@@ -8,8 +8,9 @@ pd.options.mode.chained_assignment = None
 from sklearn.model_selection import train_test_split
 from category_encoders import TargetEncoder
 
-#read the data
-df = pd.read_csv(r"C:\Users\Romar\Google Drive\Master\DE\DE-group-5\Assignment 2\Data\data.csv")
+
+# read the data uncomment to test
+# df = pd.read_csv(r"C:\Users\Romar\Google Drive\Master\DE\DE-group-5\Assignment 2\Data\data.csv")
 
 
 def PreprocessData(df):
@@ -128,5 +129,6 @@ def SplitData(df):
     X_train, X_test, y_train, y_test = train_test_split(df_pp, y, test_size=0.33, random_state=42)
     return X_train, X_test, y_train, y_test
 
-
-X_train, X_test, y_train, y_test = SplitData(df)
+# uncomment to test
+# X_train, X_test, y_train, y_test = SplitData(df)
+# print(X_train)
