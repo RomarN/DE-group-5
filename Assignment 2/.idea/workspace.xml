@@ -45,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PytonScripts/Fit.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DE2020" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -137,7 +137,7 @@
       <workItem from="1603208478516" duration="2701000" />
       <workItem from="1603289687042" duration="3360000" />
       <workItem from="1603296490464" duration="930000" />
-      <workItem from="1603297439927" duration="652000" />
+      <workItem from="1603297439927" duration="2194000" />
     </task>
     <servers />
   </component>
@@ -161,26 +161,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603297999683" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1603297998450">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1603298584921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1603297998450" />
-    <state width="1250" height="398" key="GridCell.Tab.0.bottom" timestamp="1603298085977">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1603298584921" />
+    <state width="1258" height="478" key="GridCell.Tab.0.bottom" timestamp="1603299648125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1250" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603298085977" />
-    <state width="1250" height="398" key="GridCell.Tab.0.center" timestamp="1603298085976">
+    <state width="1258" height="478" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603299648125" />
+    <state width="1258" height="478" key="GridCell.Tab.0.center" timestamp="1603299648125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1250" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603298085976" />
-    <state width="1250" height="398" key="GridCell.Tab.0.left" timestamp="1603298085976">
+    <state width="1258" height="478" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603299648125" />
+    <state width="1258" height="478" key="GridCell.Tab.0.left" timestamp="1603299648125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1250" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603298085976" />
-    <state width="1250" height="398" key="GridCell.Tab.0.right" timestamp="1603298085976">
+    <state width="1258" height="478" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603299648125" />
+    <state width="1258" height="478" key="GridCell.Tab.0.right" timestamp="1603299648125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1250" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603298085976" />
+    <state width="1258" height="478" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603299648125" />
     <state x="781" y="345" key="SettingsEditor" timestamp="1603208350444">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -191,7 +191,7 @@
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1603292776398" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Assignment_2$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1603298016558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PytonScripts" />
-    <SUITE FILE_PATH="coverage/Assignment_2$Fit.coverage" NAME="Fit Coverage Results" MODIFIED="1603298085972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PytonScripts" />
+    <SUITE FILE_PATH="coverage/Assignment_2$PreProcess.coverage" NAME="PreProcess Coverage Results" MODIFIED="1603299115077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PytonScripts" />
+    <SUITE FILE_PATH="coverage/Assignment_2$Fit.coverage" NAME="Fit Coverage Results" MODIFIED="1603299648120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PytonScripts" />
   </component>
 </project>

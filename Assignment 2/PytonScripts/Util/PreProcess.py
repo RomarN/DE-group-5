@@ -92,7 +92,7 @@ def PreprocessData(df):
     newheight = []
 
     # All the positions, weet niet wat we daar mee willlen
-    positions = ['LS', 'ST', 'RS', 'LW', 'CF', 'RF', 'RW', 'LAM', 'CAM', 'RAM', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LWB',
+    positions = ['LS', 'ST', 'RS', 'LW', 'LF', 'CF', 'RF', 'RW', 'LAM', 'CAM', 'RAM', 'LM', 'LCM', 'CM', 'RCM', 'RM', 'LWB',
                  'LDM', 'CDM', 'RDM', 'RWB', 'LB', 'LCB', 'CB', 'RCB', 'RB']
 
     for position in positions:
@@ -126,9 +126,9 @@ def SplitData(df):
 
     # Create a train and test split
     y = df_pp.pop('Overall')
-    X_train, X_test, y_train, y_test = train_test_split(df_pp, y, test_size=0.33, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(df_pp, y, test_size=0.20)
     return X_train, X_test, y_train, y_test
 
-# uncomment to test
+# # uncomment to test
 # X_train, X_test, y_train, y_test = SplitData(df)
 # print(X_train)
