@@ -22,23 +22,21 @@ import csv
 import io
 import json
 import logging
+import pickle
+import warnings
 
 import apache_beam as beam
-import pandas as pd
 from apache_beam.io import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
 from google.cloud import storage
-import warnings
-from sklearn.metrics import confusion_matrix, accuracy_score
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
-import matplotlib.pyplot as plt
-from mlxtend.plotting import plot_confusion_matrix
 import pandas as pd
 pd.options.mode.chained_assignment = None
 from sklearn.model_selection import train_test_split
-from category_encoders import TargetEncoder
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 
 
 def train_save_model(readable_file, project_id, bucket_name):
@@ -55,9 +53,9 @@ def train_save_model(readable_file, project_id, bucket_name):
 
     # split into input (X) and output (Y) variables
     Features = ['time', 'ejection_fraction', 'serum_creatinine']
-    x = heart_data[Features]
-    y = heart_data["DEATH_EVENT"]
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
+    x = dataset[Features]
+    y = dataset["DEATH_EVENT"]
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
     # define model
     kn_clf = KNeighborsClassifier(n_neighbors=6)
     kn_clf.fit(x_train, y_train)
@@ -70,12 +68,12 @@ def train_save_model(readable_file, project_id, bucket_name):
     }
 
     #Hier weer verder
-    model.save("model.h5")
+    pickle.dump(kn_clf, open('model.sav', 'wb'))
     # Save to GCS
     client = storage.Client(project=project_id)
     bucket = client.get_bucket(bucket_name)
-    blob = bucket.blob('models/model.h5')
-    blob.upload_from_filename('model.h5')
+    blob = bucket.blob('models/model.sav')
+    blob.upload_from_filename('model.sav')
     logging.info("Saved the model to GCP bucket")
     return json.dumps(str(text_out), sort_keys=False, indent=4)
 
