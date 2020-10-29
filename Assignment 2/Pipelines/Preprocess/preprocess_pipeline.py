@@ -52,8 +52,9 @@ def preprocess_data(readable_file, project_id, bucket_name):
     y = df.iloc[:, [12]]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1)
     logging.info(x_train)
-    result = pd.concat([x_train, y_train], axis=1)
-    return result
+    train = pd.concat([x_train, y_train], axis=1)
+    test = pd.concat([x_test, y_test],axis=1)
+    return train, test
 
 
 def run(argv=None, save_main_session=True):
@@ -91,9 +92,10 @@ def run(argv=None, save_main_session=True):
 
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
-        output = (p | 'Create FileName' >> beam.Create([known_args.input])
+        output_train, output_test = (p | 'Create FileName' >> beam.Create([known_args.input])
                   | 'Preprocess Data' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
-        output | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
+        output_train | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
+        output_test | 'Write_test' >> WriteToText(known_args.output + "TEST", file_name_suffix=".csv")
 
 
 if __name__ == '__main__':
