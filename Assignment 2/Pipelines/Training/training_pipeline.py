@@ -52,8 +52,7 @@ def train_save_model(readable_file, project_id, bucket_name):
     dataset = df.values
 
     # split into input (X) and output (Y) variables
-    Features = ['time', 'ejection_fraction', 'serum_creatinine']
-    x = dataset[Features]
+    x = dataset['time', 'ejection_fraction', 'serum_creatinine']
     y = dataset["DEATH_EVENT"]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
     # define model
