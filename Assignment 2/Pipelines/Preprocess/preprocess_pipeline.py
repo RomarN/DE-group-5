@@ -37,29 +37,25 @@ pd.options.mode.chained_assignment = None
 from sklearn.model_selection import train_test_split
 
 
-# def preprocess_data(readable_file, project_id, bucket_name):
-#     # Open a channel to read the file from GCS
-#     gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
-#
-#     # Read it as csv, you can also use csv.reader
-#     csv_dict = csv.DictReader(io.TextIOWrapper(gcs_file))
-#
-#     # Create the DataFrame
-#     df = pd.DataFrame(csv_dict)
-#
-#     # split into input (X) and output (Y) variables
-#     x = df.iloc[:, [11, 4, 7]]
-#     y = df.iloc[:, [12]]
-#     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1)
-#     logging.info(x_train)
-#     train = pd.concat([x_train, y_train], axis=1)
-#     test = pd.concat([x_test, y_test],axis=1)
-#     return train, test
+def preprocess_data(readable_file, project_id, bucket_name):
+    # Open a channel to read the file from GCS
+    gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
+
+    # Read it as csv, you can also use csv.reader
+    csv_dict = csv.DictReader(io.TextIOWrapper(gcs_file))
+
+    # Create the DataFrame
+    df = pd.DataFrame(csv_dict)
+    
+    # split into input (X) and output (Y) variables
+    features = df.iloc[:, [11, 4, 7, 12]]
+
+    return features
 
 
-def split_dataset(plant, num_partitions, ratio):
+def split_dataset(data, num_partitions, ratio):
     assert num_partitions == len(ratio)
-    bucket = sum(map(ord, json.dumps(plant))) % sum(ratio)
+    bucket = sum(map(ord, json.dumps(data))) % sum(ratio)
     total = 0
     for i, part in enumerate(ratio):
         total += part
@@ -103,6 +99,7 @@ def run(argv=None, save_main_session=True):
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
         train_dataset, test_dataset = (p | 'Create FileName Object' >> ReadFromText(known_args.input)
+                                       | 'Preprocess' >> beam.map(preprocess_data, known_args.pid, known_args.mbucket)
                                        | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
         train_dataset | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
         test_dataset | 'Write_test' >> WriteToText(known_args.output + "TEST", file_name_suffix=".csv")
