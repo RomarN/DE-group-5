@@ -50,7 +50,7 @@ def preprocess_data(readable_file, project_id, bucket_name):
     # split into input (X) and output (Y) variables
     features = df.iloc[:, [11, 4, 7, 12]]
 
-    return features.values
+    return features.to_dict('records')
 
 
 def split_dataset(data, num_partitions, ratio):
