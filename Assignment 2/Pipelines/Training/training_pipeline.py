@@ -61,7 +61,7 @@ def train_save_model(readable_file, project_id, bucket_name):
     kn_clf.fit(x_train, y_train)
     kn_pred = kn_clf.predict(x_test)
     kn_acc = accuracy_score(y_test, kn_pred)
-
+    print('test')
     # evaluate the model
     text_out = {
         "accuracy:": str(kn_acc * 100)
