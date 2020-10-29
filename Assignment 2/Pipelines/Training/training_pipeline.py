@@ -71,7 +71,7 @@ def train_save_model(readable_file, project_id, bucket_name):
     blob = bucket.blob('models/model.sav')
     blob.upload_from_filename('model.sav')
     logging.info("Saved the model to GCP bucket")
-    return json.dumps(str(text_out), sort_keys=False, indent=4)
+    return str(text_out)
 
 
 def run(argv=None, save_main_session=True):
