@@ -36,6 +36,26 @@ import pandas as pd
 pd.options.mode.chained_assignment = None
 from sklearn.model_selection import train_test_split
 
+def get_csv_reader(readable_file):
+    # Open a channel to read the file from GCS
+    gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
+
+    # Return the csv reader
+    return csv.DictReader(io.TextIOWrapper(gcs_file))
+
+class MyPredictDoFn(beam.DoFn):
+
+    def __init__(self, project_id, bucket_name):
+        self._model = None
+        self._project_id = project_id
+        self._bucket_name = bucket_name
+
+    def process(self, element, **kwargs):
+        df = pd.DataFrame.from_dict(element,
+                                    orient="index").transpose().fillna(0)
+        features = df.iloc[:, [11, 4, 7, 12]]
+        results_dict = features.to_dict('records')
+        return [results_dict]
 
 def preprocess_data(readable_file, project_id, bucket_name):
     # Open a channel to read the file from GCS
@@ -98,9 +118,11 @@ def run(argv=None, save_main_session=True):
 
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
-        processed_data = (p | 'Create FileName Object' >> beam.Create([known_args.input])
-                            | 'Preprocess' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
-        train_dataset, test_dataset = (processed_data | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
+        prediction_data = (p | 'CreatePCollection' >> beam.Create([known_args.input])
+                           | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
+        # processed_data = (p | 'Create FileName Object' >> beam.Create([known_args.input])
+        #                     | 'Preprocess' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
+        train_dataset, test_dataset = (prediction_data | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
         test_dataset | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
         test_dataset | 'Write_test' >> WriteToText(known_args.output + "TEST", file_name_suffix=".csv")
 
