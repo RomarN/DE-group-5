@@ -60,7 +60,7 @@ class MyPredictDoFn(beam.DoFn):
         x = df.iloc[:, [11, 4, 7]]
         results = self._model.predict(x)
         results_dict = pd.DataFrame(results, columns = ['Predicted Class']).to_dict()
-        pickle.dump(results_dict, open('results.txt', 'wb'))
+        pickle.dump(results_dict, open('results', 'wb'))
         # Save to GCS
         client = storage.Client(project=self._project_id)
         bucket = client.get_bucket(self._bucket_name)
