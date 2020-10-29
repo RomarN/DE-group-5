@@ -52,8 +52,8 @@ def train_save_model(readable_file, project_id, bucket_name):
     dataset = df.values
 
     # split into input (X) and output (Y) variables
-    x = dataset['time', 'ejection_fraction', 'serum_creatinine']
-    y = dataset["DEATH_EVENT"]
+    x = dataset.iloc[:, [11, 4, 7]]
+    y = dataset.iloc[:, [12]]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
     # define model
     kn_clf = KNeighborsClassifier(n_neighbors=6)
