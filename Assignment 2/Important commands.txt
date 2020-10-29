@@ -1,0 +1,1 @@
+python3 training_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/heart_failure_clinical_records_dataset.csv --output model_per_results

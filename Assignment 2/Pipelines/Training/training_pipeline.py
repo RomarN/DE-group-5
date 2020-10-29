@@ -48,19 +48,17 @@ def train_save_model(readable_file, project_id, bucket_name):
 
     # Create the DataFrame
     df = pd.DataFrame(csv_dict)
-    # df = df.apply(pd.to_numeric)
-    # dataset = df.values
 
     # split into input (X) and output (Y) variables
     x = df.iloc[:, [11, 4, 7]]
     y = df.iloc[:, [12]]
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1)
     # define model
     kn_clf = KNeighborsClassifier(n_neighbors=6)
     kn_clf.fit(x_train, y_train)
     kn_pred = kn_clf.predict(x_test)
     kn_acc = accuracy_score(y_test, kn_pred)
-    print('test')
+
     # evaluate the model
     text_out = {
         "accuracy:": str(kn_acc * 100)
