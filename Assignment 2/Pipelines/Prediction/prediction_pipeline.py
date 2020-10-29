@@ -58,8 +58,12 @@ class MyPredictDoFn(beam.DoFn):
         df = pd.DataFrame.from_dict(element,
                                     orient="index").transpose().fillna(0)
         x = df.iloc[:, [11, 4, 7]]
+        y = df.iloc[:, [12]]
         results = self._model.predict(x)
-        results_dict = pd.DataFrame(results, columns = ['Predicted Class']).to_dict()
+        results_df = pd.DataFrame(results, columns = ['Predicted Class'])
+        results_df['Actual Class'] = y
+        logging.info(results_df)
+        results_dict = results_df.to_dict()
         return [results_dict]
 
 

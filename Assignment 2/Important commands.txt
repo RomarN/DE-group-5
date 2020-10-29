@@ -4,3 +4,5 @@ python3 training_pipeline.py --runner DataflowRunner --project weighty-flag-2889
 
 
 python3 prediction_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/heart_failure_clinical_records_dataset.csv --output prediction_results
+
+python3 prediction_pipeline.py --runner DataflowRunner --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name predictionpipeline --input gs://delabs2020/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://delabs2020/predictresults --setup_file ./setup.py
