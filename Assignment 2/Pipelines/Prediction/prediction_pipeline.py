@@ -60,7 +60,6 @@ class MyPredictDoFn(beam.DoFn):
         x = df.iloc[:, [11, 4, 7]]
         results = self._model.predict(x)
         results_dict = pd.DataFrame(results, columns = ['Predicted Class']).to_dict()
-        logging.info(results_dict)
         return [results_dict]
 
 
