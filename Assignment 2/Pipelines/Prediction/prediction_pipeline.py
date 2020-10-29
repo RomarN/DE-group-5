@@ -52,7 +52,7 @@ class MyPredictDoFn(beam.DoFn):
         bucket = client.get_bucket(self._bucket_name)
         blob = bucket.blob('models/model.sav')
         blob.download_to_filename('downloaded_model.sav')
-        self._model = pickle.load(open(file_path, 'rb'))
+        self._model = pickle.load(open('downloaded_model.sav', 'rb'))
 
     def process(self, element, **kwargs):
         df = pd.DataFrame.from_dict(element,
