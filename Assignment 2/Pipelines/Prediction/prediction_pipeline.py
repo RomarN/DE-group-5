@@ -59,8 +59,8 @@ class MyPredictDoFn(beam.DoFn):
                                     orient="index").transpose().fillna(0)
         x = df.iloc[:, [11, 4, 7]]
         results = self._model.predict(x)
-        results_df = pd.DataFrame(results, columns = ['Predicted Class']).to_dict
-        return []
+        results_dict = pd.DataFrame(results, columns = ['Predicted Class']).to_dict()
+        return [results_dict]
 
 
 def run(argv=None, save_main_session=True):
