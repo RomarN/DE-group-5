@@ -101,7 +101,7 @@ def run(argv=None, save_main_session=True):
         processed_data = (p | 'Create FileName Object' >> beam.Create([known_args.input])
                             | 'Preprocess' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
         train_dataset, test_dataset = (processed_data | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
-        train_dataset | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
+        test_dataset | 'Write' >> WriteToText(known_args.output, file_name_suffix=".csv")
         test_dataset | 'Write_test' >> WriteToText(known_args.output + "TEST", file_name_suffix=".csv")
 
 
