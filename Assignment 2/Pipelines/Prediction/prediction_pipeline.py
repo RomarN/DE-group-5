@@ -20,58 +20,51 @@ from __future__ import absolute_import
 import argparse
 import csv
 import io
-import json
 import logging
 import pickle
-import warnings
 
 import apache_beam as beam
+import pandas as pd
 from apache_beam.io import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
 from google.cloud import storage
 
-warnings.simplefilter(action='ignore', category=FutureWarning)
-import pandas as pd
-pd.options.mode.chained_assignment = None
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
 
-
-def train_save_model(readable_file, project_id, bucket_name):
+def get_csv_reader(readable_file):
     # Open a channel to read the file from GCS
     gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
 
-    # Read it as csv, you can also use csv.reader
-    csv_dict = csv.DictReader(io.TextIOWrapper(gcs_file))
+    # Return the csv reader
+    return csv.DictReader(io.TextIOWrapper(gcs_file))
 
-    # Create the DataFrame
-    df = pd.DataFrame(csv_dict)
 
-    # split into input (X) and output (Y) variables
-    x = df.iloc[:, [11, 4, 7]]
-    y = df.iloc[:, [12]]
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1)
-    # define model
-    kn_clf = KNeighborsClassifier(n_neighbors=6)
-    kn_clf.fit(x_train, y_train)
-    kn_pred = kn_clf.predict(x_test)
-    kn_acc = accuracy_score(y_test, kn_pred)
+class MyPredictDoFn(beam.DoFn):
 
-    # evaluate the model
-    text_out = {
-        "accuracy:": str(kn_acc * 100)
-    }
+    def __init__(self, project_id, bucket_name):
+        self._model = None
+        self._project_id = project_id
+        self._bucket_name = bucket_name
 
-    pickle.dump(kn_clf, open('model.sav', 'wb'))
-    # Save to GCS
-    client = storage.Client(project=project_id)
-    bucket = client.get_bucket(bucket_name)
-    blob = bucket.blob('models/model.sav')
-    blob.upload_from_filename('model.sav')
-    logging.info("Saved the model to GCP bucket")
-    return json.dumps(str(text_out), sort_keys=False, indent=4)
+    def setup(self):
+        logging.info("MyPredictDoFn initialisation. Load Model")
+        client = storage.Client(project=self._project_id)
+        bucket = client.get_bucket(self._bucket_name)
+        blob = bucket.blob('models/model.sav')
+        blob.download_to_filename('downloaded_model.sav')
+        self._model = pickle.load(open('downloaded_model.sav', 'rb'))
+
+    def process(self, element, **kwargs):
+        df = pd.DataFrame.from_dict(element,
+                                    orient="index").transpose().fillna(0)
+        x = df.iloc[:, [11, 4, 7]]
+        y = df.iloc[:, [12]]
+        results = self._model.predict(x)
+        results_df = pd.DataFrame(results, columns = ['Predicted Class'])
+        results_df['Actual Class'] = y
+        logging.info(results_df)
+        results_dict = results_df.to_dict()
+        return [results_dict]
 
 
 def run(argv=None, save_main_session=True):
@@ -82,6 +75,7 @@ def run(argv=None, save_main_session=True):
         dest='input',
         default='gs://dataflow-samples/data/kinglear.txt',
         help='Input file to process.')
+
     parser.add_argument(
         '--output',
         dest='output',
@@ -89,7 +83,6 @@ def run(argv=None, save_main_session=True):
         # for outputting the results.
         default='gs://YOUR_OUTPUT_BUCKET/AND_OUTPUT_PREFIX',
         help='Output file to write results to.')
-
     parser.add_argument(
         '--pid',
         dest='pid',
@@ -100,8 +93,7 @@ def run(argv=None, save_main_session=True):
         dest='mbucket',
         help='model bucket name')
     known_args, pipeline_args = parser.parse_known_args(argv)
-    print(known_args)
-    print(pipeline_args)
+
     # We use the save_main_session option because one or more DoFn's in this
     # workflow rely on global context (e.g., a module imported at module level).
     pipeline_options = PipelineOptions(pipeline_args)
@@ -109,10 +101,12 @@ def run(argv=None, save_main_session=True):
 
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
-        output = (p | 'Create FileName Object' >> beam.Create([known_args.input])
-                  | 'TrainAndSaveModel' >> beam.FlatMap(train_save_model, known_args.pid, known_args.mbucket)
-                  )
-        output | 'Write' >> WriteToText(known_args.output)
+        # Read the text file[pattern] into a PCollection.
+        prediction_data = (p | 'CreatePCollection' >> beam.Create([known_args.input])
+                           | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
+        output = (prediction_data | 'Predict' >> beam.ParDo(MyPredictDoFn(project_id=known_args.pid,
+                                                                          bucket_name=known_args.mbucket)))
+        output | 'WritePR' >> WriteToText(known_args.output)
 
 
 if __name__ == '__main__':

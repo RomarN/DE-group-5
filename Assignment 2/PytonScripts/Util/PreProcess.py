@@ -10,7 +10,7 @@ from category_encoders import TargetEncoder
 
 
 # read the data uncomment to test
-# df = pd.read_csv(r"C:\Users\Romar\Google Drive\Master\DE\DE-group-5\Assignment 2\Data\data.csv")
+# df = pd.read_csv(r"C:\Users\Romar\Google Drive\Master\DE\DE-group-5\Assignment 2\data\data.csv")
 
 
 def PreprocessData(df):
