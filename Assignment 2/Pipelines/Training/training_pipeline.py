@@ -48,12 +48,12 @@ def train_save_model(readable_file, project_id, bucket_name):
 
     # Create the DataFrame
     df = pd.DataFrame(csv_dict)
-    df = df.apply(pd.to_numeric)
-    dataset = df.values
+    # df = df.apply(pd.to_numeric)
+    # dataset = df.values
 
     # split into input (X) and output (Y) variables
-    x = dataset.iloc[:, [11, 4, 7]]
-    y = dataset.iloc[:, [12]]
+    x = df.iloc[:, [11, 4, 7]]
+    y = df.iloc[:, [12]]
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
     # define model
     kn_clf = KNeighborsClassifier(n_neighbors=6)
