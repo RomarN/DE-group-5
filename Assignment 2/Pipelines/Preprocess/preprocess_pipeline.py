@@ -22,19 +22,16 @@ import csv
 import io
 import json
 import logging
-import pickle
 import warnings
 
 import apache_beam as beam
-from apache_beam.io import WriteToText, ReadFromText
+from apache_beam.io import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions
 from apache_beam.options.pipeline_options import SetupOptions
-from google.cloud import storage
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import pandas as pd
 pd.options.mode.chained_assignment = None
-from sklearn.model_selection import train_test_split
 
 def get_csv_reader(readable_file):
     # Open a channel to read the file from GCS
@@ -56,21 +53,6 @@ class MyPredictDoFn(beam.DoFn):
         features = df.iloc[:, [11, 4, 7, 12]]
         results_dict = features.to_dict('records')
         return [results_dict]
-
-def preprocess_data(readable_file, project_id, bucket_name):
-    # Open a channel to read the file from GCS
-    gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
-
-    # Read it as csv, you can also use csv.reader
-    csv_dict = csv.DictReader(io.TextIOWrapper(gcs_file))
-
-    # Create the DataFrame
-    df = pd.DataFrame(csv_dict)
-
-    # split into input (X) and output (Y) variables
-    features = df.iloc[:, [11, 4, 7, 12]]
-
-    return features.values
 
 
 def split_dataset(data, num_partitions, ratio):
@@ -120,8 +102,6 @@ def run(argv=None, save_main_session=True):
     with beam.Pipeline(options=pipeline_options) as p:
         prediction_data = (p | 'CreatePCollection' >> beam.Create([known_args.input])
                            | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
-        # processed_data = (p | 'Create FileName Object' >> beam.Create([known_args.input])
-        #                     | 'Preprocess' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
         train_dataset, test_dataset = (prediction_data | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
         train_dataset | 'Write' >> WriteToText(known_args.output + "/data/traindata", file_name_suffix=".csv")
         test_dataset | 'Write_test' >> WriteToText(known_args.output + "/data/testdata", file_name_suffix=".csv")
