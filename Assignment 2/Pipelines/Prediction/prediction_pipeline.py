@@ -62,8 +62,8 @@ class MyPredictDoFn(beam.DoFn):
         results = self._model.predict(x)
         results_df = pd.DataFrame(results, columns = ['Predicted Class'])
         results_df['Actual Class'] = y
-        logging.info(results_df)
-        results_dict = results_df.to_dict()
+        logging.info(results, y)
+
         return [results_df]
 
 
