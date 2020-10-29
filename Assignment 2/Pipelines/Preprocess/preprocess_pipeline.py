@@ -102,7 +102,9 @@ def run(argv=None, save_main_session=True):
     with beam.Pipeline(options=pipeline_options) as p:
         prediction_data = (p | 'CreatePCollection' >> beam.Create([known_args.input])
                            | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
-        train_dataset, test_dataset = (prediction_data | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
+        output = (prediction_data | 'Predict' >> beam.ParDo(MyPredictDoFn(project_id=known_args.pid,
+                                                                          bucket_name=known_args.mbucket)))
+        train_dataset, test_dataset = (output | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
         train_dataset | 'Write' >> WriteToText(known_args.output + "/data/traindata", file_name_suffix=".csv")
         test_dataset | 'Write_test' >> WriteToText(known_args.output + "/data/testdata", file_name_suffix=".csv")
 
