@@ -40,7 +40,7 @@ def get_csv_reader(readable_file):
     # Return the csv reader
     return csv.DictReader(io.TextIOWrapper(gcs_file))
 
-class MyPredictDoFn(beam.DoFn):
+class MyPreProcessDoFn(beam.DoFn):
 
     def __init__(self, project_id, bucket_name):
         self._model = None
@@ -102,7 +102,7 @@ def run(argv=None, save_main_session=True):
     with beam.Pipeline(options=pipeline_options) as p:
         prediction_data = (p | 'CreatePCollection' >> beam.Create([known_args.input])
                            | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
-        output = (prediction_data | 'Predict' >> beam.ParDo(MyPredictDoFn(project_id=known_args.pid,
+        output = (prediction_data | 'PreProcess' >> beam.ParDo(MyPreProcessDoFn(project_id=known_args.pid,
                                                                           bucket_name=known_args.mbucket)))
         train_dataset, test_dataset = (output | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
         train_dataset | 'Write' >> WriteToText(known_args.output + "/data/traindata", file_name_suffix=".csv")
