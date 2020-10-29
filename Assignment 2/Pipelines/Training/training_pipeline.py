@@ -64,7 +64,6 @@ def train_save_model(readable_file, project_id, bucket_name):
         "accuracy:": str(kn_acc * 100)
     }
 
-    #Hier weer verder
     pickle.dump(kn_clf, open('model.sav', 'wb'))
     # Save to GCS
     client = storage.Client(project=project_id)
