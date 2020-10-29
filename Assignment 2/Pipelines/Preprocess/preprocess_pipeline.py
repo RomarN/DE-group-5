@@ -92,7 +92,7 @@ def run(argv=None, save_main_session=True):
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
         output = (p | 'Create FileName' >> beam.Create([known_args.input])
-                  | 'Preprocess Data' >> beam.Map(preprocess_data, known_args.pid, known_args.mbucket))
+                  | 'Preprocess Data' >> beam.FlatMap(preprocess_data, known_args.pid, known_args.mbucket))
         output | 'Write' >> WriteToText(known_args.output)
 
 
