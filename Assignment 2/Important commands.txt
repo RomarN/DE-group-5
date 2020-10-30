@@ -1,3 +1,5 @@
+Romar:
+
 TRAINING:
 python3 training_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/traindata-00000-of-00001.csv --output model_results
 python training_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/traindata-00000-of-00001.csv --output model_results
@@ -19,3 +21,8 @@ python preprocess_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --i
 
 
 python3 preprocess_pipeline.py --runner DataflowRunner --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name preprocesspipeline --input gs://delabs2020/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://delabs2020/data --setup_file ./setup.py
+
+Jim:
+Dion:
+Tawab:
+Alan:
