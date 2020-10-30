@@ -20,7 +20,6 @@ from __future__ import absolute_import
 import argparse
 import csv
 import io
-import json
 import logging
 import pickle
 import warnings
@@ -114,7 +113,7 @@ def run(argv=None, save_main_session=True):
     # The pipeline will be run on exiting the with block.
     with beam.Pipeline(options=pipeline_options) as p:
         output = (p | 'Create FileName Object' >> beam.Create([known_args.input])
-                  | 'TrainAndSaveModel' >> beam.FlatMap(train_save_model, known_args.pid, known_args.mbucket)
+                  | 'TrainAndSaveModel' >> beam.Map(train_save_model, known_args.pid, known_args.mbucket)
                   )
         output | 'Write' >> WriteToText(known_args.output)
 
