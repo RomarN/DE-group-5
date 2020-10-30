@@ -1,231 +1,231 @@
-[{'time': '4', 'ejection_fraction': '20', 'serum_creatinine': '1.9', 'DEATH_EVENT': '1'}]
-[{'time': '6', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '1'}]
-[{'time': '7', 'ejection_fraction': '20', 'serum_creatinine': '1.9', 'DEATH_EVENT': '1'}]
-[{'time': '8', 'ejection_fraction': '20', 'serum_creatinine': '2.7', 'DEATH_EVENT': '1'}]
-[{'time': '8', 'ejection_fraction': '40', 'serum_creatinine': '2.1', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '15', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '60', 'serum_creatinine': '1.1', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '65', 'serum_creatinine': '1.5', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '35', 'serum_creatinine': '9.4', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '38', 'serum_creatinine': '4', 'DEATH_EVENT': '1'}]
-[{'time': '10', 'ejection_fraction': '25', 'serum_creatinine': '0.9', 'DEATH_EVENT': '1'}]
-[{'time': '11', 'ejection_fraction': '30', 'serum_creatinine': '1.1', 'DEATH_EVENT': '1'}]
-[{'time': '12', 'ejection_fraction': '30', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '13', 'ejection_fraction': '50', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '14', 'ejection_fraction': '14', 'serum_creatinine': '0.8', 'DEATH_EVENT': '1'}]
-[{'time': '15', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '15', 'ejection_fraction': '55', 'serum_creatinine': '1.9', 'DEATH_EVENT': '1'}]
-[{'time': '16', 'ejection_fraction': '25', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '20', 'ejection_fraction': '30', 'serum_creatinine': '1.6', 'DEATH_EVENT': '1'}]
-[{'time': '20', 'ejection_fraction': '35', 'serum_creatinine': '0.9', 'DEATH_EVENT': '1'}]
-[{'time': '22', 'ejection_fraction': '60', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '23', 'ejection_fraction': '30', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '23', 'ejection_fraction': '38', 'serum_creatinine': '1.9', 'DEATH_EVENT': '1'}]
-[{'time': '24', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '26', 'ejection_fraction': '45', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '26', 'ejection_fraction': '38', 'serum_creatinine': '5.8', 'DEATH_EVENT': '1'}]
-[{'time': '27', 'ejection_fraction': '38', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '28', 'ejection_fraction': '45', 'serum_creatinine': '3', 'DEATH_EVENT': '1'}]
-[{'time': '29', 'ejection_fraction': '30', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '29', 'ejection_fraction': '50', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '30', 'ejection_fraction': '35', 'serum_creatinine': '3.5', 'DEATH_EVENT': '1'}]
-[{'time': '30', 'ejection_fraction': '30', 'serum_creatinine': '2.3', 'DEATH_EVENT': '0'}]
-[{'time': '30', 'ejection_fraction': '38', 'serum_creatinine': '3', 'DEATH_EVENT': '1'}]
-[{'time': '31', 'ejection_fraction': '20', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '32', 'ejection_fraction': '30', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '33', 'ejection_fraction': '45', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '33', 'ejection_fraction': '50', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '35', 'ejection_fraction': '38', 'serum_creatinine': '1.9', 'DEATH_EVENT': '1'}]
-[{'time': '38', 'ejection_fraction': '25', 'serum_creatinine': '0.9', 'DEATH_EVENT': '1'}]
-[{'time': '40', 'ejection_fraction': '38', 'serum_creatinine': '0.6', 'DEATH_EVENT': '1'}]
-[{'time': '42', 'ejection_fraction': '30', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '43', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '43', 'ejection_fraction': '62', 'serum_creatinine': '6.8', 'DEATH_EVENT': '1'}]
-[{'time': '44', 'ejection_fraction': '50', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '50', 'ejection_fraction': '30', 'serum_creatinine': '2', 'DEATH_EVENT': '1'}]
-[{'time': '54', 'ejection_fraction': '40', 'serum_creatinine': '0.6', 'DEATH_EVENT': '0'}]
-[{'time': '59', 'ejection_fraction': '20', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '60', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '61', 'ejection_fraction': '35', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '64', 'ejection_fraction': '20', 'serum_creatinine': '2.9', 'DEATH_EVENT': '1'}]
-[{'time': '65', 'ejection_fraction': '15', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '66', 'ejection_fraction': '25', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '67', 'ejection_fraction': '25', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '72', 'ejection_fraction': '50', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '73', 'ejection_fraction': '20', 'serum_creatinine': '0.7', 'DEATH_EVENT': '1'}]
-[{'time': '74', 'ejection_fraction': '40', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '74', 'ejection_fraction': '38', 'serum_creatinine': '0.6', 'DEATH_EVENT': '0'}]
-[{'time': '74', 'ejection_fraction': '45', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '75', 'ejection_fraction': '40', 'serum_creatinine': '1.7', 'DEATH_EVENT': '0'}]
-[{'time': '77', 'ejection_fraction': '25', 'serum_creatinine': '2.5', 'DEATH_EVENT': '1'}]
-[{'time': '78', 'ejection_fraction': '50', 'serum_creatinine': '1.8', 'DEATH_EVENT': '0'}]
-[{'time': '78', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '79', 'ejection_fraction': '50', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '79', 'ejection_fraction': '60', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '79', 'ejection_fraction': '40', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '80', 'ejection_fraction': '45', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '82', 'ejection_fraction': '60', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '83', 'ejection_fraction': '38', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '83', 'ejection_fraction': '60', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '83', 'ejection_fraction': '25', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '85', 'ejection_fraction': '60', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '85', 'ejection_fraction': '25', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '86', 'ejection_fraction': '40', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '87', 'ejection_fraction': '25', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '87', 'ejection_fraction': '45', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '87', 'ejection_fraction': '25', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '88', 'ejection_fraction': '30', 'serum_creatinine': '1.7', 'DEATH_EVENT': '1'}]
-[{'time': '88', 'ejection_fraction': '45', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '88', 'ejection_fraction': '35', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '88', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '88', 'ejection_fraction': '35', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '90', 'ejection_fraction': '60', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '90', 'ejection_fraction': '35', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '90', 'ejection_fraction': '25', 'serum_creatinine': '1.6', 'DEATH_EVENT': '0'}]
-[{'time': '90', 'ejection_fraction': '60', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '91', 'ejection_fraction': '40', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '91', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '94', 'ejection_fraction': '60', 'serum_creatinine': '3.2', 'DEATH_EVENT': '0'}]
-[{'time': '94', 'ejection_fraction': '60', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '95', 'ejection_fraction': '38', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '96', 'ejection_fraction': '40', 'serum_creatinine': '3.7', 'DEATH_EVENT': '1'}]
-[{'time': '100', 'ejection_fraction': '17', 'serum_creatinine': '2.1', 'DEATH_EVENT': '1'}]
-[{'time': '104', 'ejection_fraction': '60', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '104', 'ejection_fraction': '30', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '105', 'ejection_fraction': '35', 'serum_creatinine': '3.4', 'DEATH_EVENT': '0'}]
-[{'time': '106', 'ejection_fraction': '60', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '107', 'ejection_fraction': '45', 'serum_creatinine': '6.1', 'DEATH_EVENT': '0'}]
-[{'time': '107', 'ejection_fraction': '40', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '107', 'ejection_fraction': '35', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '107', 'ejection_fraction': '40', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '107', 'ejection_fraction': '60', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '108', 'ejection_fraction': '25', 'serum_creatinine': '2.1', 'DEATH_EVENT': '0'}]
-[{'time': '108', 'ejection_fraction': '35', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '108', 'ejection_fraction': '30', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '109', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '1'}]
-[{'time': '109', 'ejection_fraction': '30', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '110', 'ejection_fraction': '40', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '111', 'ejection_fraction': '25', 'serum_creatinine': '1.7', 'DEATH_EVENT': '1'}]
-[{'time': '112', 'ejection_fraction': '30', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '112', 'ejection_fraction': '30', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '113', 'ejection_fraction': '30', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '115', 'ejection_fraction': '35', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '115', 'ejection_fraction': '45', 'serum_creatinine': '2.5', 'DEATH_EVENT': '1'}]
-[{'time': '117', 'ejection_fraction': '60', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '120', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '120', 'ejection_fraction': '35', 'serum_creatinine': '1.4', 'DEATH_EVENT': '0'}]
-[{'time': '121', 'ejection_fraction': '50', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '121', 'ejection_fraction': '45', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '121', 'ejection_fraction': '40', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '121', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '123', 'ejection_fraction': '40', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '130', 'ejection_fraction': '38', 'serum_creatinine': '1.3', 'DEATH_EVENT': '1'}]
-[{'time': '134', 'ejection_fraction': '60', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '140', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '145', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '145', 'ejection_fraction': '35', 'serum_creatinine': '1.5', 'DEATH_EVENT': '0'}]
-[{'time': '146', 'ejection_fraction': '40', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '146', 'ejection_fraction': '60', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '146', 'ejection_fraction': '20', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '146', 'ejection_fraction': '60', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '147', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '147', 'ejection_fraction': '50', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '147', 'ejection_fraction': '60', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '147', 'ejection_fraction': '40', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '148', 'ejection_fraction': '30', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '150', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '1'}]
-[{'time': '154', 'ejection_fraction': '25', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '170', 'ejection_fraction': '25', 'serum_creatinine': '1.2', 'DEATH_EVENT': '1'}]
-[{'time': '171', 'ejection_fraction': '30', 'serum_creatinine': '1.5', 'DEATH_EVENT': '1'}]
-[{'time': '172', 'ejection_fraction': '50', 'serum_creatinine': '0.6', 'DEATH_EVENT': '1'}]
-[{'time': '172', 'ejection_fraction': '25', 'serum_creatinine': '2.1', 'DEATH_EVENT': '1'}]
-[{'time': '172', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '174', 'ejection_fraction': '45', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '174', 'ejection_fraction': '35', 'serum_creatinine': '2.1', 'DEATH_EVENT': '0'}]
-[{'time': '174', 'ejection_fraction': '60', 'serum_creatinine': '1.5', 'DEATH_EVENT': '0'}]
-[{'time': '175', 'ejection_fraction': '40', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '180', 'ejection_fraction': '30', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '180', 'ejection_fraction': '20', 'serum_creatinine': '1.6', 'DEATH_EVENT': '1'}]
-[{'time': '185', 'ejection_fraction': '38', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '186', 'ejection_fraction': '30', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '186', 'ejection_fraction': '20', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '186', 'ejection_fraction': '35', 'serum_creatinine': '1.8', 'DEATH_EVENT': '0'}]
-[{'time': '186', 'ejection_fraction': '45', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '186', 'ejection_fraction': '60', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '187', 'ejection_fraction': '25', 'serum_creatinine': '3.5', 'DEATH_EVENT': '0'}]
-[{'time': '187', 'ejection_fraction': '45', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '187', 'ejection_fraction': '38', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '187', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '188', 'ejection_fraction': '17', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '192', 'ejection_fraction': '50', 'serum_creatinine': '1.4', 'DEATH_EVENT': '0'}]
-[{'time': '193', 'ejection_fraction': '30', 'serum_creatinine': '1.6', 'DEATH_EVENT': '1'}]
-[{'time': '194', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '196', 'ejection_fraction': '50', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '196', 'ejection_fraction': '70', 'serum_creatinine': '9', 'DEATH_EVENT': '1'}]
-[{'time': '197', 'ejection_fraction': '35', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '198', 'ejection_fraction': '20', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '200', 'ejection_fraction': '50', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '201', 'ejection_fraction': '35', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '205', 'ejection_fraction': '25', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '206', 'ejection_fraction': '35', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '207', 'ejection_fraction': '25', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '207', 'ejection_fraction': '30', 'serum_creatinine': '1.7', 'DEATH_EVENT': '1'}]
-[{'time': '208', 'ejection_fraction': '35', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '209', 'ejection_fraction': '45', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '210', 'ejection_fraction': '30', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '210', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '211', 'ejection_fraction': '45', 'serum_creatinine': '1.18', 'DEATH_EVENT': '0'}]
-[{'time': '212', 'ejection_fraction': '30', 'serum_creatinine': '1.3', 'DEATH_EVENT': '0'}]
-[{'time': '212', 'ejection_fraction': '35', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '213', 'ejection_fraction': '40', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '213', 'ejection_fraction': '38', 'serum_creatinine': '1.8', 'DEATH_EVENT': '0'}]
-[{'time': '213', 'ejection_fraction': '38', 'serum_creatinine': '1.4', 'DEATH_EVENT': '0'}]
-[{'time': '214', 'ejection_fraction': '25', 'serum_creatinine': '2.4', 'DEATH_EVENT': '0'}]
-[{'time': '214', 'ejection_fraction': '35', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '214', 'ejection_fraction': '40', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '214', 'ejection_fraction': '30', 'serum_creatinine': '0.5', 'DEATH_EVENT': '0'}]
-[{'time': '215', 'ejection_fraction': '35', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '215', 'ejection_fraction': '45', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '215', 'ejection_fraction': '35', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '215', 'ejection_fraction': '60', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '216', 'ejection_fraction': '30', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '220', 'ejection_fraction': '38', 'serum_creatinine': '1.7', 'DEATH_EVENT': '0'}]
-[{'time': '230', 'ejection_fraction': '38', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '230', 'ejection_fraction': '25', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '233', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '233', 'ejection_fraction': '40', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '235', 'ejection_fraction': '25', 'serum_creatinine': '1.4', 'DEATH_EVENT': '1'}]
-[{'time': '237', 'ejection_fraction': '60', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '237', 'ejection_fraction': '38', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '240', 'ejection_fraction': '35', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '241', 'ejection_fraction': '20', 'serum_creatinine': '1.83', 'DEATH_EVENT': '1'}]
-[{'time': '244', 'ejection_fraction': '38', 'serum_creatinine': '1.7', 'DEATH_EVENT': '0'}]
-[{'time': '244', 'ejection_fraction': '38', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '244', 'ejection_fraction': '35', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '244', 'ejection_fraction': '30', 'serum_creatinine': '1.6', 'DEATH_EVENT': '0'}]
-[{'time': '244', 'ejection_fraction': '40', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '245', 'ejection_fraction': '38', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '245', 'ejection_fraction': '40', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '245', 'ejection_fraction': '30', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '245', 'ejection_fraction': '38', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '245', 'ejection_fraction': '35', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '246', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '246', 'ejection_fraction': '30', 'serum_creatinine': '0.7', 'DEATH_EVENT': '0'}]
-[{'time': '247', 'ejection_fraction': '40', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '40', 'serum_creatinine': '2.7', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '30', 'serum_creatinine': '3.8', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '40', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '40', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '35', 'serum_creatinine': '1.7', 'DEATH_EVENT': '0'}]
-[{'time': '250', 'ejection_fraction': '55', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '256', 'ejection_fraction': '35', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '256', 'ejection_fraction': '38', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '257', 'ejection_fraction': '55', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '258', 'ejection_fraction': '38', 'serum_creatinine': '1', 'DEATH_EVENT': '0'}]
-[{'time': '270', 'ejection_fraction': '35', 'serum_creatinine': '0.9', 'DEATH_EVENT': '0'}]
-[{'time': '270', 'ejection_fraction': '38', 'serum_creatinine': '1.1', 'DEATH_EVENT': '0'}]
-[{'time': '271', 'ejection_fraction': '38', 'serum_creatinine': '1.2', 'DEATH_EVENT': '0'}]
-[{'time': '278', 'ejection_fraction': '60', 'serum_creatinine': '0.8', 'DEATH_EVENT': '0'}]
-[{'time': '280', 'ejection_fraction': '38', 'serum_creatinine': '1.4', 'DEATH_EVENT': '0'}]
-[{'time': '285', 'ejection_fraction': '45', 'serum_creatinine': '1.6', 'DEATH_EVENT': '0'}]
+4, 20, 1.9, 1
+6, 38, 1.1, 1
+7, 20, 1.9, 1
+8, 20, 2.7, 1
+8, 40, 2.1, 1
+10, 15, 1.2, 1
+10, 60, 1.1, 1
+10, 65, 1.5, 1
+10, 35, 9.4, 1
+10, 38, 4, 1
+10, 25, 0.9, 1
+11, 30, 1.1, 1
+12, 30, 1, 0
+13, 50, 1.3, 1
+14, 14, 0.8, 1
+15, 25, 1, 1
+15, 55, 1.9, 1
+16, 25, 1.3, 0
+20, 30, 1.6, 1
+20, 35, 0.9, 1
+22, 60, 0.8, 0
+23, 30, 1.83, 1
+23, 38, 1.9, 1
+24, 40, 1, 1
+26, 45, 1.3, 1
+26, 38, 5.8, 1
+27, 38, 1.83, 1
+28, 45, 3, 1
+29, 30, 1.2, 0
+29, 50, 1, 1
+30, 35, 3.5, 1
+30, 30, 2.3, 0
+30, 38, 3, 1
+31, 20, 1.83, 1
+32, 30, 1.2, 1
+33, 45, 1.2, 1
+33, 50, 1, 0
+35, 38, 1.9, 1
+38, 25, 0.9, 1
+40, 38, 0.6, 1
+42, 30, 1, 1
+43, 25, 1, 1
+43, 62, 6.8, 1
+44, 50, 1, 1
+50, 30, 2, 1
+54, 40, 0.6, 0
+59, 20, 1.3, 1
+60, 25, 1, 1
+61, 35, 1, 1
+64, 20, 2.9, 1
+65, 15, 1.3, 1
+66, 25, 1.2, 1
+67, 25, 1.83, 1
+72, 50, 1.3, 0
+73, 20, 0.7, 1
+74, 40, 1.2, 0
+74, 38, 0.6, 0
+74, 45, 0.9, 0
+75, 40, 1.7, 0
+77, 25, 2.5, 1
+78, 50, 1.8, 0
+78, 25, 1, 1
+79, 50, 0.7, 0
+79, 60, 0.8, 0
+79, 40, 0.7, 0
+80, 45, 1, 0
+82, 60, 1.18, 0
+83, 38, 0.7, 0
+83, 60, 1, 0
+83, 25, 1.3, 0
+85, 60, 1.1, 0
+85, 25, 1.2, 0
+86, 40, 1.1, 0
+87, 25, 1.1, 0
+87, 45, 1.18, 0
+87, 25, 1.1, 0
+88, 30, 1.7, 1
+88, 45, 1.3, 0
+88, 35, 0.9, 0
+88, 38, 1.1, 0
+88, 35, 1.3, 0
+90, 60, 1.2, 1
+90, 35, 1.2, 0
+90, 25, 1.6, 0
+90, 60, 1.3, 1
+91, 40, 1.2, 0
+91, 40, 1, 0
+94, 60, 3.2, 0
+94, 60, 0.9, 0
+95, 38, 1, 0
+96, 40, 3.7, 1
+100, 17, 2.1, 1
+104, 60, 0.8, 0
+104, 30, 0.7, 0
+105, 35, 3.4, 0
+106, 60, 0.7, 0
+107, 45, 6.1, 0
+107, 40, 1.18, 0
+107, 35, 1.18, 0
+107, 40, 1.18, 0
+107, 60, 0.9, 0
+108, 25, 2.1, 0
+108, 35, 1, 0
+108, 30, 0.8, 0
+109, 38, 1.1, 1
+109, 30, 0.9, 0
+110, 40, 0.9, 0
+111, 25, 1.7, 1
+112, 30, 0.7, 0
+112, 30, 0.7, 0
+113, 30, 1.83, 1
+115, 35, 0.9, 0
+115, 45, 2.5, 1
+117, 60, 0.9, 0
+120, 35, 0.8, 0
+120, 35, 1.4, 0
+121, 50, 1.3, 0
+121, 45, 1.1, 0
+121, 40, 1.2, 0
+121, 35, 0.8, 0
+123, 40, 0.9, 0
+130, 38, 1.3, 1
+134, 60, 0.7, 0
+140, 40, 1, 0
+145, 35, 0.8, 0
+145, 35, 1.5, 0
+146, 40, 0.9, 0
+146, 60, 1.1, 0
+146, 20, 0.8, 0
+146, 60, 1, 0
+147, 40, 1, 0
+147, 50, 1, 0
+147, 60, 1.2, 0
+147, 40, 0.7, 0
+148, 30, 0.9, 0
+150, 25, 1, 1
+154, 25, 1.2, 1
+170, 25, 1.2, 1
+171, 30, 1.5, 1
+172, 50, 0.6, 1
+172, 25, 2.1, 1
+172, 40, 1, 0
+174, 45, 0.9, 0
+174, 35, 2.1, 0
+174, 60, 1.5, 0
+175, 40, 0.7, 0
+180, 30, 1.18, 0
+180, 20, 1.6, 1
+185, 38, 1.18, 0
+186, 30, 0.8, 0
+186, 20, 1, 0
+186, 35, 1.8, 0
+186, 45, 0.7, 0
+186, 60, 0.9, 0
+187, 25, 3.5, 0
+187, 45, 1, 0
+187, 38, 0.9, 0
+187, 35, 0.8, 0
+188, 17, 1, 0
+192, 50, 1.4, 0
+193, 30, 1.6, 1
+194, 35, 0.8, 0
+196, 50, 0.9, 0
+196, 70, 9, 1
+197, 35, 0.7, 0
+198, 20, 1.83, 1
+200, 50, 1.1, 0
+201, 35, 1.1, 0
+205, 25, 1, 0
+206, 35, 1, 0
+207, 25, 1.2, 0
+207, 30, 1.7, 1
+208, 35, 1.1, 0
+209, 45, 1.1, 0
+210, 30, 1.2, 0
+210, 40, 1, 0
+211, 45, 1.18, 0
+212, 30, 1.3, 0
+212, 35, 1.1, 0
+213, 40, 0.9, 0
+213, 38, 1.8, 0
+213, 38, 1.4, 0
+214, 25, 2.4, 0
+214, 35, 1, 0
+214, 40, 1.2, 0
+214, 30, 0.5, 0
+215, 35, 0.8, 0
+215, 45, 1, 0
+215, 35, 1.2, 0
+215, 60, 1, 0
+216, 30, 1, 0
+220, 38, 1.7, 0
+230, 38, 1, 0
+230, 25, 0.8, 0
+233, 40, 1, 0
+233, 40, 0.7, 0
+235, 25, 1.4, 1
+237, 60, 1, 0
+237, 38, 1.2, 0
+240, 35, 0.9, 0
+241, 20, 1.83, 1
+244, 38, 1.7, 0
+244, 38, 0.9, 0
+244, 35, 1, 0
+244, 30, 1.6, 0
+244, 40, 0.9, 0
+245, 38, 1.2, 0
+245, 40, 0.7, 0
+245, 30, 1, 0
+245, 38, 0.8, 0
+245, 35, 1.1, 0
+246, 38, 1.1, 0
+246, 30, 0.7, 0
+247, 40, 1, 0
+250, 40, 2.7, 0
+250, 30, 3.8, 0
+250, 38, 1.1, 0
+250, 40, 0.8, 0
+250, 40, 1.2, 0
+250, 35, 1.7, 0
+250, 55, 1, 0
+256, 35, 1.1, 0
+256, 38, 0.9, 0
+257, 55, 0.8, 0
+258, 38, 1, 0
+270, 35, 0.9, 0
+270, 38, 1.1, 0
+271, 38, 1.2, 0
+278, 60, 0.8, 0
+280, 38, 1.4, 0
+285, 45, 1.6, 0

@@ -65,6 +65,9 @@ def split_dataset(data, num_partitions, ratio):
             return i
     return len(ratio) - 1
 
+def format_results(data):
+    return '%s, %s, %s, %s' % (data[0]['time'], data[0]['ejection_fraction'], data[0]['serum_creatinine'], data[0]['DEATH_EVENT'])
+
 def run(argv=None, save_main_session=True):
     """Main entry point; defines and runs the wordcount pipeline."""
     parser = argparse.ArgumentParser()
@@ -105,8 +108,10 @@ def run(argv=None, save_main_session=True):
         output = (prediction_data | 'PreProcess' >> beam.ParDo(MyPreProcessDoFn(project_id=known_args.pid,
                                                                           bucket_name=known_args.mbucket)))
         train_dataset, test_dataset = (output | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
-        train_dataset | 'Write' >> WriteToText(known_args.output + "/traindata", file_name_suffix=".csv")
-        test_dataset | 'Write_test' >> WriteToText(known_args.output + "/testdata", file_name_suffix=".csv")
+        format_train_dataset = train_dataset | 'Format_TrainDataset' >> beam.Map(format_results)
+        format_test_dataset = test_dataset | 'Format_TestDataset' >> beam.Map(format_results)
+        format_train_dataset | 'Write' >> WriteToText(known_args.output + "/traindata", file_name_suffix=".csv")
+        format_test_dataset | 'Write_test' >> WriteToText(known_args.output + "/testdata", file_name_suffix=".csv")
 
 
 if __name__ == '__main__':

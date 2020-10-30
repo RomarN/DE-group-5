@@ -44,15 +44,19 @@ def train_save_model(readable_file, project_id, bucket_name):
     gcs_file = beam.io.filesystems.FileSystems.open(readable_file)
 
     # Read it as csv, you can also use csv.reader
+    logging.info(gcs_file)
     csv_dict = csv.DictReader(io.TextIOWrapper(gcs_file))
+    # json_dict = json.load(gcs_file)
 
     # Create the DataFrame
-    df = pd.DataFrame(csv_dict)
-
+    df = pd.DataFrame.from_dict(csv_dict)
+    df = df.apply(pd.to_numeric)
+    logging.info(df)
     # split into input (X) and output (Y) variables
-    x = df.iloc[:, [11, 4, 7]]
-    y = df.iloc[:, [12]]
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1)
+    x = df.iloc[:, [0, 1, 2]]
+    y = df.iloc[:, [3]]
+    logging.info(y)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.05, random_state=1)
     # define model
     kn_clf = KNeighborsClassifier(n_neighbors=6)
     kn_clf.fit(x_train, y_train)

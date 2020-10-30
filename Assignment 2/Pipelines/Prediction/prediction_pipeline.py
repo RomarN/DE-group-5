@@ -66,6 +66,7 @@ class MyPredictDoFn(beam.DoFn):
         return [results_dict]
 
 
+
 def run(argv=None, save_main_session=True):
     """Main entry point; defines and runs the wordcount pipeline."""
     parser = argparse.ArgumentParser()
