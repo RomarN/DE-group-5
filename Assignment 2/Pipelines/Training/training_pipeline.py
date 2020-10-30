@@ -64,7 +64,7 @@ def train_save_model(readable_file, project_id, bucket_name):
 
     # evaluate the model
     text_out = {
-        "accuracy:": str(kn_acc * 100)
+        "accuracy": str(kn_acc * 100)
     }
 
     pickle.dump(kn_clf, open('model.sav', 'wb'))
