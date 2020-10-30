@@ -106,7 +106,7 @@ def run(argv=None, save_main_session=True):
                            | 'ReadCSVFle' >> beam.FlatMap(get_csv_reader))
         output = (prediction_data | 'Predict' >> beam.ParDo(MyPredictDoFn(project_id=known_args.pid,
                                                                           bucket_name=known_args.mbucket)))
-        output | 'WritePR' >> WriteToText(file_path_prefix= known_args.output + "/results/predictions", file_name_suffix=".csv")
+        output | 'WritePR' >> WriteToText(file_path_prefix= known_args.output + "/predictions", file_name_suffix=".csv")
 
 
 if __name__ == '__main__':
