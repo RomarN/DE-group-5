@@ -10,8 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 # Expose the port that our app runs in
 EXPOSE 5000
-# Enviroment Variables
-ENV PREDICT_DB_API http://prediction:5000/prediction/db
 # Run our App
 CMD ["python3","app.py"]
 
