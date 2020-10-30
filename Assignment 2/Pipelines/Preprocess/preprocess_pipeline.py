@@ -105,8 +105,8 @@ def run(argv=None, save_main_session=True):
         output = (prediction_data | 'PreProcess' >> beam.ParDo(MyPreProcessDoFn(project_id=known_args.pid,
                                                                           bucket_name=known_args.mbucket)))
         train_dataset, test_dataset = (output | 'Train_Test_Split' >> beam.Partition(split_dataset, 2, ratio=[8, 2]))
-        train_dataset | 'Write' >> WriteToText(known_args.output + "/data/traindata", file_name_suffix=".csv")
-        test_dataset | 'Write_test' >> WriteToText(known_args.output + "/data/testdata", file_name_suffix=".csv")
+        train_dataset | 'Write' >> WriteToText(known_args.output + "/traindata", file_name_suffix=".csv")
+        test_dataset | 'Write_test' >> WriteToText(known_args.output + "/testdata", file_name_suffix=".csv")
 
 
 if __name__ == '__main__':
