@@ -57,6 +57,7 @@ class MyPredictDoFn(beam.DoFn):
     def process(self, element, **kwargs):
         df = pd.DataFrame.from_dict(element,
                                     orient="index").transpose().fillna(0)
+        df = df.apply(pd.to_numeric)
         x = df.iloc[:, [0, 1, 2]]
         y = df.iloc[:, [3]]
         results = self._model.predict(x)
