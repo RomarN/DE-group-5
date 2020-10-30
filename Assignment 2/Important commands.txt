@@ -8,7 +8,8 @@ python3 training_pipeline.py --runner DataflowRunner --project weighty-flag-2889
 PREDICTION:
 python3 prediction_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/testdata-00000-of-00001.csv --output results
 python prediction_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/testdata-00000-of-00001.csv --output results
-python3 prediction_pipeline.py --runner DataflowRunner --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name predictionpipeline --input gs://delabs2020/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://delabs2020 --setup_file ./setup.py
+
+python3 prediction_pipeline.py --runner DataflowRunner --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name predictionpipeline --input gs://delabs2020/data/testdata-00000-of-00001.csv --region us-central1 --output gs://delabs2020 --setup_file ./setup.py
 
 
 
