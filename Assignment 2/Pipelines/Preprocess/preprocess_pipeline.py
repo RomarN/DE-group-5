@@ -72,6 +72,11 @@ def run(argv=None, save_main_session=True):
     """Main entry point; defines and runs the wordcount pipeline."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        '--machine_type',
+        dest='machine_type',
+        help='Choose the machine type'
+    )
+    parser.add_argument(
         '--input',
         dest='input',
         default='gs://dataflow-samples/data/kinglear.txt',
@@ -93,11 +98,7 @@ def run(argv=None, save_main_session=True):
         '--mbucket',
         dest='mbucket',
         help='model bucket name')
-    parser.add_argument(
-        '--machine_type',
-        dest='machine_type',
-        help='Dion'
-    )
+
     known_args, pipeline_args = parser.parse_known_args(argv)
     print(known_args)
     print(pipeline_args)
