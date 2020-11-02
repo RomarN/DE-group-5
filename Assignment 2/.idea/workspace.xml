@@ -59,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DE2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -152,6 +152,7 @@
       <workItem from="1603289687042" duration="3360000" />
       <workItem from="1603296490464" duration="930000" />
       <workItem from="1603297439927" duration="3311000" />
+      <workItem from="1604322674405" duration="33000" />
     </task>
     <servers />
   </component>
@@ -175,10 +176,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603297999683" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1603298584921">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1604322704237">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1603298584921" />
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1604322704237" />
     <state width="1258" height="485" key="GridCell.Tab.0.bottom" timestamp="1603300780772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

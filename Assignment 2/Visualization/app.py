@@ -22,7 +22,7 @@ def index():
     bucket = client.get_bucket(bucket_name)
     blob = bucket.blob('results/predictions-00000-of-00001.csv')
     blob.download_to_filename('download.csv')
-    # csv_file = pickle.load(open('download.csv', 'rb'))
+
 
     # Load necessary data
     results = pd.read_csv('download.csv', header=None, names=['predicted', 'actual'])

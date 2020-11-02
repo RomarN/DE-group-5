@@ -1,5 +1,5 @@
 Romar:
-
+gcloud auth application-default login
 TRAINING:
 python3 training_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/traindata-00000-of-00001.csv --output model_results
 python training_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/traindata-00000-of-00001.csv --output model_results
