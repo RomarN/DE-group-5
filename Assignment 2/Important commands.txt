@@ -20,7 +20,7 @@ python3 preprocess_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --
 python preprocess_pipeline.py --pid weighty-flag-288919 --mbucket delabs2020 --input data/heart_failure_clinical_records_dataset.csv --output data
 
 
-python3 preprocess_pipeline.py --runner DataflowRunner --machine_type=n1-highcpu-16 --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name preprocesspipeline --input gs://delabs2020/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://delabs2020/data --setup_file ./setup.py
+python3 preprocess_pipeline.py --runner DataflowRunner --machine_type n1-standard-16 --project weighty-flag-288919 --temp_location gs://delabs2020/tmp/ --pid weighty-flag-288919 --mbucket delabs2020 --job_name preprocesspipeline --input gs://delabs2020/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://delabs2020/data --setup_file ./setup.py
 
 Jim:
 Dion:
