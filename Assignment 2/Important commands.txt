@@ -28,10 +28,10 @@ PREPROCESS:
 python3 preprocess_pipeline.py --runner DataflowRunner --machine_type=n1-standard-8 --project dse-de2k20 --temp_location gs://de2020emmer/tmp/ --pid dse-de2k20 --mbucket de2020emmer --job_name preprocesspipeline --input gs://de2020emmer/data/heart_failure_clinical_records_dataset.csv --region us-central1 --output gs://de2020emmer/data --setup_file ./setup.py
 
 TRAINING:
-python3 training_pipeline.py --runner DataflowRunner --machine_type=n1-standard-8 --project dse-de2k20 --temp_location gs://de2020emmer/tmp/ --pid dse-de2k20 --mbucket de2020emmer --job_name trainingpipeline --input gs://de2020emmer/data/traindata-00000-of-00001.csv --region us-central1 --output gs://de2020emmer/results/model_results --setup_file ./setup.py
+python3 training_pipeline.py --runner DataflowRunner --machine_type=n1-highcpu-16 --project dse-de2k20 --temp_location gs://de2020emmer/tmp/ --pid dse-de2k20 --mbucket de2020emmer --job_name trainingpipeline --input gs://de2020emmer/data/traindata-00000-of-00001.csv --region us-central1 --output gs://de2020emmer/results/model_results --setup_file ./setup.py
 
 PREDICTION:
-python3 prediction_pipeline.py --runner DataflowRunner --project dse-de2k20 --temp_location gs://de2020emmer/tmp/ --pid dse-de2k20 --mbucket de2020emmer --job_name predictionpipeline --input gs://de2020emmer/data/testdata-00000-of-00001.csv --region us-central1 --output gs://de2020emmer/results --setup_file ./setup.py
+python3 prediction_pipeline.py --runner DataflowRunner --machine_type=n1-highcpu-16 --project dse-de2k20 --temp_location gs://de2020emmer/tmp/ --pid dse-de2k20 --mbucket de2020emmer --job_name predictionpipeline --input gs://de2020emmer/data/testdata-00000-of-00001.csv --region us-central1 --output gs://de2020emmer/results --setup_file ./setup.py
 
 Tawab:
 Alan:
