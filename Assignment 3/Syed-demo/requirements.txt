@@ -1,0 +1,7 @@
+fastparquet
+numpy
+pandas
+scikit-learn
+scipy
+yfinance
+kfp>=1.1.1
