@@ -29,15 +29,19 @@ def index():
 
     # Generate the figure **without using pyplot**.
     # line 1 points
-    plt.figure()
+    plt.figure(figsize=(10, 3))
     x = results['date']
+    dates = []
+    for item in x:
+        temp = str(item)
+        dates.append(temp[5:])
     y1 = results['predictions']
     y2 = results['actual']
     # plotting the line 1 points
-    plt.plot(x, y1, label="predictions")
+    plt.plot(dates, y1, label="predictions")
 
     # plotting the line 2 points
-    plt.plot(x, y2, label="actual")
+    plt.plot(dates, y2, label="actual")
     plt.xlabel('dates')
     # Set the y axis label of the current axis.
     plt.ylabel('gold price')
