@@ -29,7 +29,7 @@ def index():
 
     # Generate the figure **without using pyplot**.
     # line 1 points
-    plt.figure(figsize=(10, 3))
+    plt.figure(figsize=(20, 10))
     x = results['date']
     dates = []
     for item in x:
