@@ -38,11 +38,12 @@ def index():
 
     # plotting the line 2 points
     plt.plot(x, y2, label="actual")
-    plt.xlabel('x - axis')
+    plt.xlabel('dates')
     # Set the y axis label of the current axis.
-    plt.ylabel('y - axis')
+    plt.ylabel('gold price')
     # Set a title of the current axes.
-    plt.title('Two or more lines on same plot with suitable legends ')
+    plt.title('Gold Price prediction')
+    plt.legend()
 
     # Save it to a temporary buffer.
     buf = BytesIO()
