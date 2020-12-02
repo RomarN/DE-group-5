@@ -1,0 +1,14 @@
+#Download data
+import pandas
+df = pandas.read_csv('gs://delabs2020/raw/gold_dataset.csv')
+df
+
+#Preprocess data
+import pandas
+df = pandas.read_csv('gs://delabs2020/feature_store/gold_dataset.csv')
+df
+
+#Predictions
+import pandas
+df = pandas.read_csv('gs://delabs2020/predictions/predictions.csv')
+df
